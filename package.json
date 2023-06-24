@@ -1,0 +1,11 @@
+{
+  "name": "math-2d",
+  "version": "1.0.0",
+  "description": "Library for 2D math, canvas rendering and relevant utils.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
