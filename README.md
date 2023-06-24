@@ -1,4 +1,4 @@
-# math2d
+# m2d
 
 **Untested and API is not stable, use at own risk.**
 
