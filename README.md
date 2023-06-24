@@ -1,4 +1,4 @@
-# m2d
+# mathil
 
 **Untested and API is not stable, use at own risk.**
 

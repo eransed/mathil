@@ -1,8 +1,8 @@
 {
-  "name": "m2d",
+  "name": "mathil",
   "version": "0.2.0",
   "author": "eransed",
-  "homepage": "https://github.com/eransed/m2d",
+  "homepage": "https://github.com/eransed/mathil",
   "description": "Library for 2D math, canvas rendering and other relevant utils.",
   "keywords": [
     "math",
