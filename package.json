@@ -1,6 +1,6 @@
 {
   "name": "m2d",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "eransed",
   "homepage": "https://github.com/eransed/m2d",
   "description": "Library for 2D math, canvas rendering and other relevant utils.",
