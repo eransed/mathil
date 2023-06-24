@@ -1,9 +1,9 @@
 {
   "name": "mathil",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": "eransed",
   "homepage": "https://github.com/eransed/mathil",
-  "description": "Library for 2D math, canvas rendering and other relevant utils.",
+  "description": "Library for 2D math, canvas rendering and other relevant utils",
   "keywords": [
     "math",
     "2D",

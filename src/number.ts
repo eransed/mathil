@@ -36,7 +36,7 @@ export function siPretty(value: number, baseUnit = ""): string {
   for (let e = 24; e >= 3; e-=3) {
     const lim = Math.pow(10, e)
     const prefix = prefixes.charAt(p)
-    if (value > lim) {
+    if (value >= lim) {
       return `${round2dec(value / lim, 0)} ${prefix}${baseUnit}`
     }
     p++

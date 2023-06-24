@@ -1,5 +1,11 @@
 {
+  "buildOptions": {
+    "verbose": true,
+    "traceResolution": true
+  },
   "compilerOptions": {
+    "strict": true,
+    "allowJs": false,
     "module": "commonjs",
     "target": "es2015",
     "declaration": true,

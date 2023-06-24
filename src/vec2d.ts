@@ -37,6 +37,11 @@ export function filterOutClose(v: Vec2d[], minDist: number): Vec2d[] {
   return v
 }
 
+/**
+ * Calculate the geometric center of a given array of points
+ * @param v array of points
+ * @returns the geometric center point
+ */
 export function center(v: Vec2d[]): Vec2d {
   let sumx = 0, sumy = 0
   for (let i = 0; i < v.length; i++) {
@@ -59,6 +64,29 @@ export function pointInPolygon(p: Vec2d, pg: Vec2d[]): boolean {
   error('pointInPolygon not implemented')
   throw new Error('pointInPolygon not implemented')
   return false
+}
+
+export function boundingBox(v: Vec2d[]): Vec2d[] {
+  let minx = Infinity
+  let miny = Infinity
+  let maxx = -Infinity
+  let maxy = -Infinity
+
+  for (let i = 0; i < v.length; i++) {
+    const t = v[i]
+    if (t.x < minx) minx = t.x
+    if (t.x > maxx) maxx = t.x
+    if (t.y < miny) miny = t.y
+    if (t.y > maxy) maxy = t.y
+  }
+
+  const tl = newVec2d(minx, miny)
+  const lr = newVec2d(maxx, maxy)
+  const tr = newVec2d(maxx, miny)
+  const ll = newVec2d(minx, maxy)
+
+  return [tl, tr, lr, ll]
+
 }
 
 export function convexHull(v: Vec2d[]): Vec2d[] {
