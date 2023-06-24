@@ -1,7 +1,15 @@
 {
   "name": "math2d",
   "version": "0.1.0",
+  "author": "eransed",
+  "homepage": "https://github.com/eransed/math2d",
   "description": "Library for 2D math, canvas rendering and other relevant utils.",
+  "keywords": [
+    "math",
+    "2D",
+    "canvas",
+    "utils"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -10,8 +18,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "eransed",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "typescript": "^5.1.3"
   }
