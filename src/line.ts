@@ -36,11 +36,14 @@ export function intersection(l1: Line, l2: Line): Vec2d | null {
   return null
 }
 
-export function connectPoints(p: Vec2d[]): Line[] | null {
+export function connectPoints(p: Vec2d[], close = false): Line[] | null {
   if (p.length < 2) return null
   const lines: Line[] = []
   for (let i = 1; i < p.length; i++) {
     lines.push({p1: p[i - 1], p2: p[i]})
+  }
+  if (close) {
+    lines.push({p1: p[p.length-1], p2: p[0]})
   }
   return lines
 }
