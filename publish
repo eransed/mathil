@@ -1,5 +1,5 @@
 #!/bin/bash
 
 npm i
-tsc
+npx tsc
 npm publish
