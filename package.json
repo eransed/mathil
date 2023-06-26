@@ -1,6 +1,6 @@
 {
   "name": "mathil",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": "eransed",
   "homepage": "https://github.com/eransed/mathil",
   "description": "Library for 2D math, canvas rendering and other relevant utils",
@@ -16,7 +16,7 @@
     "/dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd tests && tsc && node ../dist_test/tests/test.js"
   },
   "license": "MIT",
   "devDependencies": {

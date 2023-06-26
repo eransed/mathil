@@ -97,5 +97,15 @@ export function error(str: string): void {
   console.log(color2(`e ${dtstamp()} (${s}) <${fnNameLine()}>`, WHT, bg(RED)) + ` ${str}`)
 }
 
+export function good(str: string): void {
+  const s = getTimeStats()
+  console.log(color2(`${dtstamp()} (${s}) <${fnNameLine()}>`, WHT, bg(GRN)) + ` ${str}`)
+}
+
+export function bad(str: string): void {
+  const s = getTimeStats()
+  console.log(color2(`${dtstamp()} (${s}) <${fnNameLine()}>`, WHT, bg(RED)) + ` ${str}`)
+}
+
 const startTimeUs = usNow()
 let sinceLastLogUs = usNow()
