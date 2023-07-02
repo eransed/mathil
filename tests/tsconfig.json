@@ -7,7 +7,7 @@
     "strict": true,
     "allowJs": false,
     "module": "commonjs",
-    "target": "es2015",
+    "target": "es2017",
     "declaration": false,
     "outDir": "../dist_test"
   },
