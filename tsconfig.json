@@ -6,9 +6,9 @@
   "compilerOptions": {
     "strict": true,
     "allowJs": false,
-    "target": "es2015",
-    "module": "es2015",
     "moduleResolution": "node",
+    "module": "es2015",
+    "target": "es2017",
     "declaration": true,
     "outDir": "./dist"
   },

@@ -59,8 +59,14 @@ function getTimeStats(): string {
   return `${usPretty(sinceStartUs)}/${usPretty(sinceLastUs)}`
 }
 
-function dtstamp() {
-  return `${new Date().toLocaleString('sv-SE')}`
+export function dateTimeFormat(d: Date): string {
+  const ms = ('' + d.getMilliseconds()).padStart(3, '0')
+  return `${d.toLocaleString('sv-SE')}.${ms}`
+}
+
+export function dateTimeStamp(): string {
+  const d = new Date()
+  return dateTimeFormat(d)
 }
 
 export function usNow() {
@@ -84,32 +90,32 @@ export function usPretty(us: number): string {
 
 export function log(str: string): void {
   const s = getTimeStats()
-  console.log(`${dtstamp()} (${s}) <${fnNameLine()}> ${str}`)
+  console.log(`${dateTimeStamp()} (${s}) <${fnNameLine()}> ${str}`)
 }
 
 export function info(str: string): void {
   const s = getTimeStats()
-  console.log(color2(`i ${dtstamp()} (${s}) <${fnNameLine()}>`, MAG, MAG) + ` ${str}`)
+  console.log(color2(`i ${dateTimeStamp()} (${s}) <${fnNameLine()}>`, MAG, MAG) + ` ${str}`)
 }
 
 export function warn(str: string): void {
   const s = getTimeStats()
-  console.log(color2(`w ${dtstamp()} (${s}) <${fnNameLine()}>`, YEL, YEL) + ` ${str}`)
+  console.log(color2(`w ${dateTimeStamp()} (${s}) <${fnNameLine()}>`, YEL, YEL) + ` ${str}`)
 }
 
 export function error(str: string): void {
   const s = getTimeStats()
-  console.log(color2(`e ${dtstamp()} (${s}) <${fnNameLine()}>`, WHT, bg(RED)) + ` ${str}`)
+  console.log(color2(`e ${dateTimeStamp()} (${s}) <${fnNameLine()}>`, WHT, bg(RED)) + ` ${str}`)
 }
 
 export function good(str: string): void {
   const s = getTimeStats()
-  console.log(color2(`${dtstamp()} (${s}) <${fnNameLine()}>`, WHT, bg(GRN)) + ` ${str}`)
+  console.log(color2(`${dateTimeStamp()} (${s}) <${fnNameLine()}>`, WHT, bg(GRN)) + ` ${str}`)
 }
 
 export function bad(str: string): void {
   const s = getTimeStats()
-  console.log(color2(`${dtstamp()} (${s}) <${fnNameLine()}>`, WHT, bg(RED)) + ` ${str}`)
+  console.log(color2(`${dateTimeStamp()} (${s}) <${fnNameLine()}>`, WHT, bg(RED)) + ` ${str}`)
 }
 
 const startTimeUs = usNow()
