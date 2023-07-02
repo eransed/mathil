@@ -54,10 +54,14 @@ function getTimeStats(): string {
   return `${usPretty(sinceStartUs)}/${usPretty(sinceLastUs)}`
 }
 
-export function dateTimeStamp() {
-  const d = new Date()
+export function dateTimeFormat(d: Date): string {
   const ms = ('' + d.getMilliseconds()).padStart(3, '0')
   return `${d.toLocaleString('sv-SE')}.${ms}`
+}
+
+export function dateTimeStamp(): string {
+  const d = new Date()
+  return dateTimeFormat(d)
 }
 
 export function usNow() {
