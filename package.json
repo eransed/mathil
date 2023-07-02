@@ -1,6 +1,6 @@
 {
   "name": "mathil",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "author": "eransed",
   "homepage": "https://github.com/eransed/mathil",
   "description": "Library for 2D math, canvas rendering and other relevant utils",
@@ -19,7 +19,8 @@
     "build": "npx tsc",
     "build-test": "cd tests && npx tsc",
     "test": "npm run build && npm run build-test && node ./dist_test/tests/test.js",
-    "canvas": "npm run test && start ./tests/index.html"
+    "build-web": "pwd && npx tsc -p ./tests/tsconfig_web.json",
+    "canvas": "npm run test && npm run build-web && node ./dist_test/tests/test-server.js"
   },
   "license": "MIT",
   "devDependencies": {

@@ -8,7 +8,7 @@
     "allowJs": false,
     "module": "CommonJS",
     "moduleResolution": "node",
-    "target": "es2017",
+    "target": "ES2017",
     "declaration": false,
     "outDir": "../dist_test"
   },

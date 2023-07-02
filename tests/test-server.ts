@@ -1,12 +1,12 @@
 import * as express from "express"
-import * as path from "path"
 
 const app = express()
-const port = 80
+const port = 3000
 
-app.use(express.static(path.join(__dirname, '../dist_test/tests')))
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static('../../dist_test_web/tests'))
+app.use(express.static('../../dist_test_web/src'))
+app.use(express.static('../../public'))
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Port ${port}`)
 })

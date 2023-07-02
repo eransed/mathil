@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "outDir": "../dist_test_web",
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": ["es2016", "dom", "es5"]
+  },
+  "include": [
+    "./**/*"
+  ]
+}
