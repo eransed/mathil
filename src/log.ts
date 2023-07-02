@@ -34,15 +34,20 @@ function getFileName(s: string): string {
 }
 
 function fnNameLine(): string {
-  const stack = new Error().stack
-  if (stack) {
-    const frame = stack.split('\n')[3]
-    const functionName = frame.split(' ')[5]
-    if (functionName.includes('<anonymous>') || frame.includes('(') === false) {
-      const a = getFileName(frame).split(':')
-      return a.slice(0, -2).join('')
+  try {
+    const stack = new Error().stack
+    if (stack) {
+      const frame = stack.split('\n')[3]
+      const functionName = frame.split(' ')[5]
+      if (functionName.includes('<anonymous>') || frame.includes('(') === false) {
+        const a = getFileName(frame).split(':')
+        return a.slice(0, -2).join('')
+      }
+      return `${functionName}`
     }
-    return `${functionName}`
+
+  } catch(e) {
+
   }
   return '<?>'
 }

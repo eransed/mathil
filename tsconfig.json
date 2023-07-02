@@ -6,8 +6,9 @@
   "compilerOptions": {
     "strict": true,
     "allowJs": false,
-    "module": "commonjs",
     "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
     "declaration": true,
     "outDir": "./dist"
   },
