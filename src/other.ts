@@ -18,3 +18,12 @@ export class EveryInterval {
     }
   }
 }
+
+export class Pair<T> {
+  one: T
+  two: T
+  constructor(one: T, two: T) {
+    this.one = one
+    this.two = two
+  }
+}

@@ -1,8 +1,8 @@
-import { newVec2d } from "../src/vec2d";
+import { newVec2 } from "../src/vec2";
 
 export function main() {
   alert('main-test')
-  console.log ('main test', newVec2d)
+  console.log ('main test', newVec2)
 }
 
 main()

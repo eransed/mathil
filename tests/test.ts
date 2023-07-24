@@ -1,5 +1,5 @@
 import { info, dateTimeStamp } from "../src/log";
-import { runVec2dTests } from "./test_vec2d";
+import { runVec2dTests } from "./test_vec2";
 runVec2dTests()
 
 info('Testing dateTimeStamp():')

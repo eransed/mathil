@@ -1,5 +1,4 @@
 #!/bin/bash
-./stats
+cd ../src
 npm i
 npx tsc
-npm publish

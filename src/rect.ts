@@ -1,13 +1,13 @@
-import { Vec2d, newVec2d } from "./vec2d";
+import { Vec2, newVec2 } from "./vec2";
 
 export interface Rect {
-  topLeft: Vec2d
-  topRight: Vec2d
-  bottomRight: Vec2d
-  bottomLeft: Vec2d
+  topLeft: Vec2
+  topRight: Vec2
+  bottomRight: Vec2
+  bottomLeft: Vec2
 }
 
-export function boundingRect(v: Vec2d[]): Rect {
+export function boundingRect(v: Vec2[]): Rect {
   let minx = Infinity
   let miny = Infinity
   let maxx = -Infinity
@@ -22,9 +22,9 @@ export function boundingRect(v: Vec2d[]): Rect {
   }
 
   return {
-    topLeft: newVec2d(minx, miny),
-    topRight: newVec2d(maxx, miny),
-    bottomRight: newVec2d(maxx, maxy),
-    bottomLeft: newVec2d(minx, maxy),
+    topLeft: newVec2(minx, miny),
+    topRight: newVec2(maxx, miny),
+    bottomRight: newVec2(maxx, maxy),
+    bottomLeft: newVec2(minx, maxy),
   }
 }
