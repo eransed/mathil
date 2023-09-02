@@ -11,25 +11,48 @@ export interface Pose {
   x: number
   y: number
   z: number
-  Rx: number
-  Ry: number
-  Rz: number
+  rx: number
+  ry: number
+  rz: number
 }
 
-export function newPose(x = 0.0, y = 0.0, z = 0.0, Rx = 0.0, Ry = 0.0, Rz = 0.0): Pose {
+export function newPose(x = 0.0, y = 0.0, z = 0.0, rx = 0.0, ry = 0.0, rz = 0.0): Pose {
   return {
     x: x,
     y: y,
     z: z,
-    Rx: Rx,
-    Ry: Ry,
-    Rz: Rz
+    rx: rx,
+    ry: ry,
+    rz: rz
+  }
+}
+
+export function newPoseFromVec(position: Vec3, rotation: Vec3): Pose {
+  return {
+    x: position.x,
+    y: position.y,
+    z: position.z,
+    rx: rotation.x,
+    ry: rotation.y,
+    rz: rotation.z
   }
 }
 
 export function newVec3(x = 0.0, y = 0.0, z = 0.0): Vec3 {
   return {x: x, y: y, z: z}
 }
+
+export function equal3(v0: Vec3, v1: Vec3): boolean {
+  if (v0.x === v1.x && v0.y === v1.y && v0.z === v1.z) {
+    return true
+  }
+  return false
+}
+
+export function to_string3(v: Vec3, dec = 0): string {
+  return `(${round2dec(v.x, dec)}, ${round2dec(v.y, dec)}, ${round2dec(v.z, dec)})`
+}
+
 
 export function sub(a: Vec3, b: Vec3): Vec3 {
   return {

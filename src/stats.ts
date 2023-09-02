@@ -1,7 +1,7 @@
 import { linearTransform, round2dec, siPretty } from "./number"
 import { Vec2 } from "./vec2"
 
-const defaultSize = 700
+const defaultSize = 500
 export const GRAPHS: DataStats[] = []
 
 export interface DataStats {
@@ -133,45 +133,124 @@ export function getMax(ds: DataStats): number {
   return ds.data.reduce((a, b) => Math.max(a, b), -Infinity)
 }
 
-export function renderGraph(ds: DataStats, topLeft: Vec2, size: Vec2, ctx: CanvasRenderingContext2D): void {
+export interface DataStatsGraphStyle {
+  highLabel: string
+  averageLabel: string
+  lowLabel: string
+  highColor: string
+  averageColor: string
+  lowColor: string
+  rectOutlineVisible: boolean
+  rectOutlineColor: string
+  baseColor: string
+  leftPad: number
+  thinLine: number
+  edgePad: number
+  minRenderDist: number
+  backgroundColor: string
+  offset: number
+  textOffset: number
+  valueOffset: number
+}
+
+export function renderGraph(ds: DataStats, topLeft: Vec2, size: Vec2, ctx: CanvasRenderingContext2D, style: DataStatsGraphStyle | null = null): void {
+
+  if (!style) {
+
+    // default style
+    const s0: DataStatsGraphStyle = {
+      highColor: '#000',
+      highLabel: 'hi',
+      averageLabel: 'av',
+      lowLabel: 'lo',
+      averageColor: '#000',
+      lowColor: '#000',
+      rectOutlineVisible: false,
+      rectOutlineColor: '#000',
+      baseColor: '#000',
+      leftPad: -300,
+      thinLine: 3,
+      edgePad: 10,
+      backgroundColor: '#fff',
+      offset: 30,
+      minRenderDist: 30,
+      textOffset: 10,
+      valueOffset: 40
+    }
+
+    // some colors
+    const s1: DataStatsGraphStyle = {
+      highColor: "#e00",
+      highLabel: 'hi',
+      averageLabel: 'av',
+      lowLabel: 'lo',
+      averageColor: "#88e",
+      lowColor: "#0e0",
+      rectOutlineVisible: false,
+      rectOutlineColor: '#000',
+      baseColor: '#000',
+      leftPad: -300,
+      thinLine: 3,
+      edgePad: 10,
+      backgroundColor: '#fff',
+      offset: 30,
+      minRenderDist: 30,
+      textOffset: 10,
+      valueOffset: 40
+    }
+
+    style = s0
+  }
+
   ctx.save()
   ctx.translate(topLeft.x, topLeft.y)
-  const thinLine = 3
-  const edgePad = 10
-  const minRenderDist = 30
+  const thinLine = style.thinLine
+  const edgePad = style.edgePad
+  const minRenderDist = style.minRenderDist
+  const offset = style.offset
+  const textOffset = style.textOffset
+  const leftPad = style.leftPad
   const value = getLatestValue(ds)
   const min = getMin(ds)
   const max = getMax(ds)
   const a = getAverage(ds)
   const spread = ds.prettyPrint(max - min, ds.baseUnit)
-  ctx.fillStyle = "#000"
+  ctx.fillStyle = style.baseColor
   ctx.lineWidth = thinLine
-  ctx.strokeStyle = "#777"
+  ctx.strokeStyle = style.rectOutlineColor
   // setScaledFont(ctx)
-  ctx.strokeRect(0, 0, size.x, size.y)
-  const leftPad = -280
+
+  if (style.rectOutlineVisible) {
+    ctx.strokeRect(0, 0, size.x, size.y)
+  }
+  
 
   const yval = linearTransform(value, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
-  ctx.fillText(`${ds.prettyPrint(value, ds.baseUnit)}`, size.x + 40, 10 + yval)
-  ctx.fillRect(size.x, yval, 30, thinLine)
-
-  ctx.fillStyle = "#88e"
   const yaver = linearTransform(a, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
-  ctx.fillText(`a: ${ds.prettyPrint(a, ds.baseUnit)}`, leftPad, 10 + yaver)
-  ctx.fillRect(-30, yaver, 30, thinLine)
-
+  const ymin = linearTransform(min, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
   const ymax = linearTransform(max, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
+
+  // value
+  ctx.fillText(`${ds.prettyPrint(value, ds.baseUnit)}`, size.x + style.valueOffset, textOffset + yaver)
+  ctx.fillRect(size.x, yval, offset, thinLine)
+
+  // average
+  ctx.fillStyle = style.averageColor
+  ctx.fillText(`${style.averageLabel}: ${ds.prettyPrint(a, ds.baseUnit)}`, leftPad, textOffset + yaver)
+  ctx.fillRect(-offset, yaver, offset, thinLine)
+
+  // max
+  ctx.fillStyle = style.highColor
+  ctx.fillRect(-offset, ymax, offset, thinLine)
   if (ymax + minRenderDist < yaver) {
-    ctx.fillStyle = "#e00"
-    ctx.fillText(`h: ${ds.prettyPrint(max, ds.baseUnit)}`, leftPad, 10 + ymax)
-    ctx.fillRect(-30, ymax, 30, thinLine)
+    ctx.fillText(`${style.highLabel}: ${ds.prettyPrint(max, ds.baseUnit)}`, leftPad, textOffset + ymax)
   }
 
-  const ymin = linearTransform(min, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
+  // min
+  ctx.fillStyle = style.lowColor
+  ctx.fillRect(-offset, ymin, offset, thinLine)
   if (ymin - minRenderDist > yaver) {
-    ctx.fillStyle = "#0e0"
-    ctx.fillText(`l: ${ds.prettyPrint(min, ds.baseUnit)}`, leftPad, 10 + ymin)
-    ctx.fillRect(-30, ymin, 30, thinLine)
+    ctx.fillText(`${style.lowLabel}: ${ds.prettyPrint(min, ds.baseUnit)}`, leftPad, textOffset + ymin)
   }
 
   const points: Vec2[] = []
@@ -182,8 +261,8 @@ export function renderGraph(ds: DataStats, topLeft: Vec2, size: Vec2, ctx: Canva
     points.push({ x: xmap, y: ymap })
   })
 
-  ctx.fillStyle = "#000"
-  ctx.strokeStyle = "#000"
+  ctx.fillStyle = style.baseColor
+  ctx.strokeStyle = style.baseColor
 
   if (points.length > 1) {
     ctx.lineWidth = thinLine
@@ -198,7 +277,7 @@ export function renderGraph(ds: DataStats, topLeft: Vec2, size: Vec2, ctx: Canva
       ctx.fillRect(v.x, v.y, edgePad, thinLine)
     })
   }
-  ctx.fillStyle = "#0e0"
+  ctx.fillStyle = style.baseColor
   const places = ds.data.length === ds.maxSize ? ` ~${spread}` : ` ${ds.data.length}/${ds.maxSize}`
   ctx.fillText(`${ds.label}${places}`, 0, -Math.floor(edgePad * 1.5))
   ctx.restore()

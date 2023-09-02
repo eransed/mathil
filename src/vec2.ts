@@ -7,7 +7,7 @@ export interface Vec2 {
   y: number
 }
 
-export function to_string(v: Vec2, dec = 0): string {
+export function to_string2(v: Vec2, dec = 0): string {
   return "(" + round2dec(v.x, dec) + ", " + round2dec(v.y, dec) + ")"
 }
 
@@ -95,7 +95,7 @@ export function convexHull(v: Vec2[]): Vec2[] {
   return v
 }
 
-export function equal(v0: Vec2, v1: Vec2): boolean {
+export function equal2(v0: Vec2, v1: Vec2): boolean {
   if (v0.x === v1.x && v0.y === v1.y) {
     return true
   }

@@ -1,6 +1,6 @@
 #!/bin/bash
-./stats
-./build
+./stats.sh
+./build.sh
 ./build_tests.sh
 ./run_tests.sh
 cd ..
