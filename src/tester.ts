@@ -10,22 +10,30 @@ export class Tester<T, U extends (...p: any) => T> {
 
   constructor(_eq: (a: T, b: T) => boolean, _to_str: (t: T) => string, testName = '_default_') {
     this.eq = _eq
-    this.to_str = _to_str
+    // this.to_str = _to_str
+    this.to_str = (o: any) => {return JSON.stringify(o)}
     log(`Testing: ${testName} ${this.eq.name}`)
     this.startTime = usNow()
   }
 
-  test(expect: T, func: U, ...params: any): void {
+  test(expect: T, func: U, ...params: any[]): void {
     const start = usNow()
     const got: T = func(...params)
     const runTime = usPretty(usNow() - start)
     const testResult = this.eq(got, expect)
+    const paraStr: string[] = []
+    params.forEach((p: any) => {
+      // console.log(p)
+      // console.log(this.to_str(p))
+      paraStr.push(this.to_str(p))
+    })
+
     if (testResult === true) {
       this.passed++
-      good(`Passed: ${func.name}(${params}) => ${this.to_str(got)}  T=${runTime}`)
+      good(`Passed: ${func.name}(${paraStr}) => ${this.to_str(got)}  T=${runTime}`)
     } else {
       this.failed++
-      bad(`FAILED: ${func.name}(${params}) => ${this.to_str(got)}, expected => ${this.to_str(expect)}   T=${runTime}`)
+      bad(`FAILED: ${func.name}(${paraStr}) => ${this.to_str(got)}, expected => ${this.to_str(expect)}   T=${runTime}`)
     }
   }
 
@@ -36,4 +44,12 @@ export class Tester<T, U extends (...p: any) => T> {
     if (total > 0) percent = round2dec(this.passed/total*100, 1)
     log(`${percent}%, ${this.passed}/${total} test(s) passed   T=${runTime}`)
   }
+}
+
+export function equalNum(a: number, b: number): boolean {
+  return a === b
+}
+
+export function toStr(o: any): string {
+  return JSON.stringify(o)
 }

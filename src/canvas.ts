@@ -1,4 +1,5 @@
-import { Vec2, floor } from "./vec2"
+import { linearTransform } from "./number"
+import { Vec2, floor, to_string2 } from "./vec2"
 
 export function clearScreen(ctx: CanvasRenderingContext2D, color = "#000") {
   ctx.fillStyle = color
@@ -35,4 +36,14 @@ export function getScreenCenterPositionFromClient() {
 
 export function getContext(canvas: HTMLCanvasElement): CanvasRenderingContext2D {
   return <CanvasRenderingContext2D>canvas.getContext("2d")
+}
+
+export function getMouse(canvas: HTMLCanvasElement, event: any, frame_size: Vec2) {
+  const r = canvas.getBoundingClientRect()
+  const x = event.clientX - r.left
+  const y = event.clientY - r.top
+  const mapx = Math.floor(linearTransform(x, 0, r.width, 0, frame_size.x))
+  const mapy = Math.floor(linearTransform(y, 0, r.height, 0, frame_size.y))
+  const position = { x: mapx, y: mapy }
+  return position
 }

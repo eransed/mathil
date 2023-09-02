@@ -74,15 +74,15 @@ export function rndfVec3(max: number, min = 0): Vec3 {
   return newVec3(rndf(min, max), rndf(min, max), rndf(min, max))
 }
 
-export function dist(v0: Vec3, v1 = {x: 0.0, y: 0.0, z: 0.0}): number {
+export function dist3(v0: Vec3, v1 = {x: 0.0, y: 0.0, z: 0.0}): number {
   return Math.sqrt(Math.pow(v1.x - v0.x, 2) + Math.pow(v1.y - v0.y, 2) + Math.pow(v1.z - v0.z, 2))
 }
 
 export function norm(a: Vec3): Vec3 {
   return {
-    x: a.x/dist(a),
-    y: a.y/dist(a),
-    z: a.z/dist(a)
+    x: a.x/dist3(a),
+    y: a.y/dist3(a),
+    z: a.z/dist3(a)
   }
 }
 
@@ -92,7 +92,7 @@ export function dot(a: Vec3, b: Vec3): number {
 }
 
 export function angle(a: Vec3, b: Vec3): number {
-  return Math.acos(dot(a, b) / ((dist(a) * dist(b))))
+  return Math.acos(dot(a, b) / ((dist3(a) * dist3(b))))
 }
 
 export function cross(a: Vec3, b: Vec3): Vec3 {

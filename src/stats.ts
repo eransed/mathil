@@ -2,7 +2,7 @@ import { linearTransform, round2dec, siPretty } from "./number"
 import { Vec2 } from "./vec2"
 
 const defaultSize = 500
-export const GRAPHS: DataStats[] = []
+// export const GRAPHS: DataStats[] = []
 
 export interface DataStats {
   data: number[]
@@ -48,7 +48,7 @@ export function newDataStats(): DataStats {
     min: 0,
     calculationTimeUs: 0
   }
-  GRAPHS.push(nds)
+  // GRAPHS.push(nds)
   return nds
 }
 
@@ -153,53 +153,57 @@ export interface DataStatsGraphStyle {
   valueOffset: number
 }
 
+export function newDataStatsGraphStyle(): DataStatsGraphStyle {
+  const s0: DataStatsGraphStyle = {
+    highColor: '#000',
+    highLabel: 'hi',
+    averageLabel: 'av',
+    lowLabel: 'lo',
+    averageColor: '#000',
+    lowColor: '#000',
+    rectOutlineVisible: false,
+    rectOutlineColor: '#000',
+    baseColor: '#000',
+    leftPad: -300,
+    thinLine: 3,
+    edgePad: 10,
+    backgroundColor: '#fff',
+    offset: 30,
+    minRenderDist: 30,
+    textOffset: 10,
+    valueOffset: 40
+  }
+  return s0
+}
+
+export function colorStyle(): DataStatsGraphStyle {
+  const s0: DataStatsGraphStyle = {
+    highColor: "#e00",
+    highLabel: 'hi',
+    averageLabel: 'av',
+    lowLabel: 'lo',
+    averageColor: "#88e",
+    lowColor: "#0e0",
+    rectOutlineVisible: false,
+    rectOutlineColor: '#000',
+    baseColor: '#000',
+    leftPad: -300,
+    thinLine: 3,
+    edgePad: 10,
+    backgroundColor: '#fff',
+    offset: 30,
+    minRenderDist: 30,
+    textOffset: 10,
+    valueOffset: 40
+  }
+  return s0
+}
+
 export function renderGraph(ds: DataStats, topLeft: Vec2, size: Vec2, ctx: CanvasRenderingContext2D, style: DataStatsGraphStyle | null = null): void {
 
   if (!style) {
-
-    // default style
-    const s0: DataStatsGraphStyle = {
-      highColor: '#000',
-      highLabel: 'hi',
-      averageLabel: 'av',
-      lowLabel: 'lo',
-      averageColor: '#000',
-      lowColor: '#000',
-      rectOutlineVisible: false,
-      rectOutlineColor: '#000',
-      baseColor: '#000',
-      leftPad: -300,
-      thinLine: 3,
-      edgePad: 10,
-      backgroundColor: '#fff',
-      offset: 30,
-      minRenderDist: 30,
-      textOffset: 10,
-      valueOffset: 40
-    }
-
-    // some colors
-    const s1: DataStatsGraphStyle = {
-      highColor: "#e00",
-      highLabel: 'hi',
-      averageLabel: 'av',
-      lowLabel: 'lo',
-      averageColor: "#88e",
-      lowColor: "#0e0",
-      rectOutlineVisible: false,
-      rectOutlineColor: '#000',
-      baseColor: '#000',
-      leftPad: -300,
-      thinLine: 3,
-      edgePad: 10,
-      backgroundColor: '#fff',
-      offset: 30,
-      minRenderDist: 30,
-      textOffset: 10,
-      valueOffset: 40
-    }
-
-    style = s0
+    style = newDataStatsGraphStyle()
+    // style = colorStyle()
   }
 
   ctx.save()

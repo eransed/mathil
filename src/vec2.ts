@@ -29,7 +29,7 @@ export function filterOutClose(v: Vec2[], minDist: number): Vec2[] {
       if (i === j) continue
       const v0 = v[i]
       const v1 = v[j]
-      if (dist(v0, v1) < minDist) {
+      if (dist2(v0, v1) < minDist) {
         v.splice(i, 1)
       }
     }
@@ -176,8 +176,8 @@ export function norm(v: Vec2): Vec2 {
   return sdiv(v, mag(v))
 }
 
-export function dist(v0: Vec2, v1: Vec2): number {
-  return Math.sqrt(Math.pow(v1.x - v0.x, 2) + Math.pow(v1.y - v1.y, 2))
+export function dist2(v0: Vec2, v1: Vec2): number {
+  return Math.sqrt(Math.pow(v1.x - v0.x, 2) + Math.pow(v1.y - v0.y, 2))
 }
 
 export function direction(angleDegree: number): Vec2 {
