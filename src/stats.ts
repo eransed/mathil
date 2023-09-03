@@ -151,6 +151,11 @@ export interface DataStatsGraphStyle {
   offset: number
   textOffset: number
   valueOffset: number
+  textSize: number
+  boldText: boolean
+  showText: boolean
+  fullWidthHelperLines: boolean
+  labelWithStdDev: boolean
 }
 
 export function newDataStatsGraphStyle(): DataStatsGraphStyle {
@@ -171,7 +176,12 @@ export function newDataStatsGraphStyle(): DataStatsGraphStyle {
     offset: 30,
     minRenderDist: 30,
     textOffset: 10,
-    valueOffset: 40
+    valueOffset: 40,
+    textSize: 12,
+    boldText: false,
+    showText: true,
+    fullWidthHelperLines: false,
+    labelWithStdDev: true
   }
   return s0
 }
@@ -194,16 +204,28 @@ export function colorStyle(): DataStatsGraphStyle {
     offset: 30,
     minRenderDist: 30,
     textOffset: 10,
-    valueOffset: 40
+    valueOffset: 40,
+    textSize: 16,
+    boldText: false,
+    showText: true,
+    fullWidthHelperLines: false,
+    labelWithStdDev: true
   }
   return s0
+}
+
+export function setFontSize(ctx: CanvasRenderingContext2D, size: number, bold=false): void {
+  if (bold) {
+    ctx.font = `bold ${size}px courier`
+  } else {
+    ctx.font = `${size}px courier` 
+  }
 }
 
 export function renderGraph(ds: DataStats, topLeft: Vec2, size: Vec2, ctx: CanvasRenderingContext2D, style: DataStatsGraphStyle | null = null): void {
 
   if (!style) {
     style = newDataStatsGraphStyle()
-    // style = colorStyle()
   }
 
   ctx.save()
@@ -219,42 +241,67 @@ export function renderGraph(ds: DataStats, topLeft: Vec2, size: Vec2, ctx: Canva
   const max = getMax(ds)
   const a = getAverage(ds)
   const spread = ds.prettyPrint(max - min, ds.baseUnit)
+  const sd = ds.prettyPrint(ds.stdDev, ds.baseUnit)
   ctx.fillStyle = style.baseColor
   ctx.lineWidth = thinLine
   ctx.strokeStyle = style.rectOutlineColor
-  // setScaledFont(ctx)
+
+  if (style.showText) {
+    setFontSize(ctx, style.textSize, style.boldText)
+  }
 
   if (style.rectOutlineVisible) {
     ctx.strokeRect(0, 0, size.x, size.y)
   }
   
-
   const yval = linearTransform(value, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
   const yaver = linearTransform(a, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
   const ymin = linearTransform(min, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
   const ymax = linearTransform(max, min - edgePad, max + edgePad, size.y - edgePad, edgePad)
 
   // value
-  ctx.fillText(`${ds.prettyPrint(value, ds.baseUnit)}`, size.x + style.valueOffset, textOffset + yaver)
+  if (style.showText) {
+    ctx.fillText(`${ds.prettyPrint(value, ds.baseUnit)}`, size.x + style.valueOffset, textOffset + yaver)
+  }
   ctx.fillRect(size.x, yval, offset, thinLine)
 
   // average
   ctx.fillStyle = style.averageColor
-  ctx.fillText(`${style.averageLabel}: ${ds.prettyPrint(a, ds.baseUnit)}`, leftPad, textOffset + yaver)
-  ctx.fillRect(-offset, yaver, offset, thinLine)
+  if (style.fullWidthHelperLines) {
+    ctx.fillRect(-offset, yaver, size.x + offset, thinLine)
+  } else {
+    ctx.fillRect(-offset, yaver, offset, thinLine)
+  }
+  if (style.showText) {
+    ctx.fillText(`${style.averageLabel}: ${ds.prettyPrint(a, ds.baseUnit)}`, leftPad, textOffset + yaver)
+  }
 
   // max
   ctx.fillStyle = style.highColor
-  ctx.fillRect(-offset, ymax, offset, thinLine)
-  if (ymax + minRenderDist < yaver) {
-    ctx.fillText(`${style.highLabel}: ${ds.prettyPrint(max, ds.baseUnit)}`, leftPad, textOffset + ymax)
+  if (style.fullWidthHelperLines) {
+    ctx.fillRect(-offset, ymax, size.x + offset, thinLine)
+  } else {
+    ctx.fillRect(-offset, ymax, offset, thinLine)
   }
+
+  if (style.showText) {
+    if (ymax + minRenderDist < yaver) {
+      ctx.fillText(`${style.highLabel}: ${ds.prettyPrint(max, ds.baseUnit)}`, leftPad, textOffset + ymax)
+    }
+  } 
 
   // min
   ctx.fillStyle = style.lowColor
-  ctx.fillRect(-offset, ymin, offset, thinLine)
-  if (ymin - minRenderDist > yaver) {
-    ctx.fillText(`${style.lowLabel}: ${ds.prettyPrint(min, ds.baseUnit)}`, leftPad, textOffset + ymin)
+  if (style.fullWidthHelperLines) {
+    ctx.fillRect(-offset, ymin, size.x + offset, thinLine)
+  } else {
+    ctx.fillRect(-offset, ymin, offset, thinLine)
+  }
+
+  if (style.showText) {
+    if (ymin - minRenderDist > yaver) {
+      ctx.fillText(`${style.lowLabel}: ${ds.prettyPrint(min, ds.baseUnit)}`, leftPad, textOffset + ymin)
+    }
   }
 
   const points: Vec2[] = []
@@ -281,8 +328,17 @@ export function renderGraph(ds: DataStats, topLeft: Vec2, size: Vec2, ctx: Canva
       ctx.fillRect(v.x, v.y, edgePad, thinLine)
     })
   }
-  ctx.fillStyle = style.baseColor
-  const places = ds.data.length === ds.maxSize ? ` ~${spread}` : ` ${ds.data.length}/${ds.maxSize}`
-  ctx.fillText(`${ds.label}${places}`, 0, -Math.floor(edgePad * 1.5))
+
+  if (style.showText) {
+    ctx.fillStyle = style.baseColor
+    let places
+    if (style.labelWithStdDev) {
+      places = `std.dev: ${sd}`
+    } else {
+      places = ds.data.length === ds.maxSize ? `~${spread}` : `${ds.data.length}/${ds.maxSize}`
+    }
+    ctx.fillText(`${ds.label} ${places}`, 0, -Math.floor(edgePad * 1.5))
+  }
+
   ctx.restore()
 }
