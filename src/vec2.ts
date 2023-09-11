@@ -204,7 +204,7 @@ export function angle2(a: Vec2, b: Vec2): number {
   return ang
 }
 
-export function rndfVec2d(min: number, max: number): Vec2 {
+export function rndfVec2(min: number, max: number): Vec2 {
   return { x: rndf(min, max), y: rndf(min, max) }
 }
 

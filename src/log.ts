@@ -47,7 +47,7 @@ function fnNameLine(): string {
     }
 
   } catch(e) {
-
+    return '<!>'
   }
   return '<?>'
 }
