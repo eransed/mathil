@@ -18,6 +18,10 @@ export function round2dec(num: number, dec = 2): number {
   return Math.round((num + Number.EPSILON) * exp) / exp
 }
 
+export function roundDec(num: number, dec = 2): string {
+  return num.toFixed(dec)
+}
+
 export function degToRad(deg: number): number {
   return deg * (Math.PI / 180.0)
 }
