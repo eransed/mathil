@@ -7,5 +7,5 @@ export * from './other'
 export * from './rect'
 export * from './tester'
 export * from './stats'
-export * as vec3 from './vec3'
+export * from './vec3'
 

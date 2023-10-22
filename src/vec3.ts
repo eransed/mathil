@@ -27,7 +27,7 @@ export function newPose(x = 0.0, y = 0.0, z = 0.0, rx = 0.0, ry = 0.0, rz = 0.0)
   }
 }
 
-export function newPoseFromVec(position: Vec3, rotation: Vec3): Pose {
+export function newPoseFromVec3(position: Vec3, rotation: Vec3): Pose {
   return {
     x: position.x,
     y: position.y,
@@ -54,7 +54,7 @@ export function to_string3(v: Vec3, dec = 0): string {
 }
 
 
-export function sub(a: Vec3, b: Vec3): Vec3 {
+export function sub3(a: Vec3, b: Vec3): Vec3 {
   return {
     x: a.x - b.x,
     y: a.y - b.y,
@@ -62,12 +62,24 @@ export function sub(a: Vec3, b: Vec3): Vec3 {
   }
 }
 
-export function add(a: Vec3, b: Vec3): Vec3 {
+export function add3(a: Vec3, b: Vec3): Vec3 {
   return {
     x: a.x + b.x,
     y: a.y + b.y,
     z: a.z + b.z
   }
+}
+
+export function copy3(from: Vec3): Vec3 {
+  return { x: from.x, y: from.y, z: from.z }
+}
+
+export function smul3(v: Vec3, s: number): Vec3 {
+  const tmp: Vec3 = copy3(v)
+  tmp.x *= s
+  tmp.y *= s
+  tmp.z *= s
+  return tmp
 }
 
 export function rndfVec3(max: number, min = 0): Vec3 {
@@ -78,7 +90,7 @@ export function dist3(v0: Vec3, v1 = {x: 0.0, y: 0.0, z: 0.0}): number {
   return Math.sqrt(Math.pow(v1.x - v0.x, 2) + Math.pow(v1.y - v0.y, 2) + Math.pow(v1.z - v0.z, 2))
 }
 
-export function norm(a: Vec3): Vec3 {
+export function norm3(a: Vec3): Vec3 {
   return {
     x: a.x/dist3(a),
     y: a.y/dist3(a),
@@ -86,13 +98,13 @@ export function norm(a: Vec3): Vec3 {
   }
 }
 
-export function dot(a: Vec3, b: Vec3): number {
+export function dot3(a: Vec3, b: Vec3): number {
   const d = (a.x * b.x) + (a.y * b.y) + (a.z * b.z)
   return d
 }
 
-export function angle(a: Vec3, b: Vec3): number {
-  return Math.acos(dot(a, b) / ((dist3(a) * dist3(b))))
+export function angle3(a: Vec3, b: Vec3): number {
+  return Math.acos(dot3(a, b) / ((dist3(a) * dist3(b))))
 }
 
 export function cross(a: Vec3, b: Vec3): Vec3 {
@@ -120,13 +132,13 @@ export function axisRotation(a: Vec3, b: Vec3): Vec3 {
   const j = newVec3(0, 1, 0)
   const k = newVec3(0, 0, 1)
 
-  const adi = dot(a, i)
-  const adj = dot(a, j)
-  const adk = dot(a, k)
+  const adi = dot3(a, i)
+  const adj = dot3(a, j)
+  const adk = dot3(a, k)
 
-  const bdi = dot(b, i)
-  const bdj = dot(b, j)
-  const bdk = dot(b, k)
+  const bdi = dot3(b, i)
+  const bdj = dot3(b, j)
+  const bdk = dot3(b, k)
 
   const rx_zero = (adj === 0 && adk === 0) || (bdj === 0 && bdk === 0)
   const ry_zero = (adk === 0 && adi === 0) || (bdk === 0 && bdi === 0)
@@ -185,18 +197,18 @@ export function rot_mat_z(theta: number): number[][] {
   return mat
 }
 
-export function multiply(v: Vec3, m: number[][]): Vec3 {
+export function multiply3(v: Vec3, m: number[][]): Vec3 {
   const row1 = newVec3(m[0][0], m[0][1], m[0][2])
   const row2 = newVec3(m[1][0], m[1][1], m[1][2])
   const row3 = newVec3(m[2][0], m[2][1], m[2][2])
   return {
-    x: dot(v, row1),
-    y: dot(v, row2),
-    z: dot(v, row3)
+    x: dot3(v, row1),
+    y: dot3(v, row2),
+    z: dot3(v, row3)
   }
 }
 
-export function scale(s: number, v: Vec3): Vec3 {
+export function scale3(v: Vec3, s: number): Vec3 {
   return {
     x: s*v.x,
     y: s*v.y,
@@ -204,36 +216,23 @@ export function scale(s: number, v: Vec3): Vec3 {
   }
 }
 
-export function average(v: Vec3[]): Vec3 {
-  let sumx = 0
-  let sumy = 0
-  let sumz = 0
-
-  v.forEach(p => {
-    sumx+=p.x
-    sumy+=p.y
-    sumz+=p.z
-  })
-
-  sumx/=v.length
-  sumy/=v.length
-  sumz/=v.length
-
-  return {
-    x: sumx,
-    y: sumy,
-    z: sumz
+export function center3(v: Vec3[]): Vec3 {
+  let sumx = 0, sumy = 0, sumz = 0
+  for (let i = 0; i < v.length; i++) {
+    sumx+=v[i].x
+    sumy+=v[i].y
+    sumz+=v[i].z
   }
-
+  return newVec3(sumx/v.length, sumy/v.length, sumz/v.length)
 }
 
-export function rotate(point: Vec3, rotation: Vec3, origin = {x: 0, y: 0, z: 0}): Vec3 {
-  const translated = sub(point, origin)
+export function rotate3(point: Vec3, rotation: Vec3, origin = {x: 0, y: 0, z: 0}): Vec3 {
+  const translated = sub3(point, origin)
   let rotated = translated
-  rotated = multiply(rotated, rot_mat_x(rotation.x))
-  rotated = multiply(rotated, rot_mat_y(rotation.y))
-  rotated = multiply(rotated, rot_mat_z(rotation.z))
-  const rotatedPoint = add(rotated, origin)
+  rotated = multiply3(rotated, rot_mat_x(rotation.x))
+  rotated = multiply3(rotated, rot_mat_y(rotation.y))
+  rotated = multiply3(rotated, rot_mat_z(rotation.z))
+  const rotatedPoint = add3(rotated, origin)
   return rotatedPoint
 }
 

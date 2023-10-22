@@ -42,7 +42,7 @@ export function filterOutClose(v: Vec2[], minDist: number): Vec2[] {
  * @param v array of points
  * @returns the geometric center point
  */
-export function center(v: Vec2[]): Vec2 {
+export function center2(v: Vec2[]): Vec2 {
   let sumx = 0, sumy = 0
   for (let i = 0; i < v.length; i++) {
     sumx+=v[i].x
@@ -102,92 +102,92 @@ export function equal2(v0: Vec2, v1: Vec2): boolean {
   return false
 }
 
-export function maxElem(v: Vec2): number {
+export function maxElem2(v: Vec2): number {
   return Math.max(v.x, v.y)
 }
 
-export function minElem(v: Vec2): number {
+export function minElem2(v: Vec2): number {
   return Math.min(v.x, v.y)
 }
 
-export function copy(from: Vec2): Vec2 {
+export function copy2(from: Vec2): Vec2 {
   return { x: from.x, y: from.y }
 }
 
-export function add(to: Vec2, from: Vec2): Vec2 {
-  const tmp: Vec2 = copy(to)
+export function add2(to: Vec2, from: Vec2): Vec2 {
+  const tmp: Vec2 = copy2(to)
   tmp.x += from.x
   tmp.y += from.y
   return tmp
 }
 
-export function sub(to: Vec2, from: Vec2): Vec2 {
-  const tmp: Vec2 = copy(to)
+export function sub2(to: Vec2, from: Vec2): Vec2 {
+  const tmp: Vec2 = copy2(to)
   tmp.x -= from.x
   tmp.y -= from.y
   return tmp
 }
 
-export function scalarMultiply(v: Vec2, s: number): Vec2 {
-  const tmp: Vec2 = copy(v)
+export function scalarMultiply2(v: Vec2, s: number): Vec2 {
+  const tmp: Vec2 = copy2(v)
   tmp.x *= s
   tmp.y *= s
   return tmp
 }
 
-export function smul(v: Vec2, s: number): Vec2 {
-  const tmp: Vec2 = copy(v)
+export function smul2(v: Vec2, s: number): Vec2 {
+  const tmp: Vec2 = copy2(v)
   tmp.x *= s
   tmp.y *= s
   return tmp
 }
 
-export function sdiv(v: Vec2, s: number): Vec2 {
+export function sdiv2(v: Vec2, s: number): Vec2 {
   if (s === 0) {
     error("Division by 0")
     return { x: 0, y: 0 }
   }
-  const tmp: Vec2 = copy(v)
+  const tmp: Vec2 = copy2(v)
   tmp.x /= s
   tmp.y /= s
   return tmp
 }
 
-export function round(v: Vec2, decimals: number): Vec2 {
-  const tmp = copy(v)
+export function round2(v: Vec2, decimals: number): Vec2 {
+  const tmp = copy2(v)
   tmp.x = round2dec(tmp.x, decimals)
   tmp.y = round2dec(tmp.y, decimals)
   return tmp
 }
 
-export function floor(v: Vec2): Vec2 {
+export function floor2(v: Vec2): Vec2 {
   return { x: Math.floor(v.x), y: Math.floor(v.y) }
 }
 
-export function magnitude(v: Vec2): number {
+export function magnitude2(v: Vec2): number {
   return Math.sqrt(Math.pow(v.x, 2) + Math.pow(v.y, 2))
 }
 
-export function mag(v: Vec2): number {
+export function mag2(v: Vec2): number {
   return Math.sqrt(Math.pow(v.x, 2) + Math.pow(v.y, 2))
 }
 
 export function norm(v: Vec2): Vec2 {
-  return sdiv(v, mag(v))
+  return sdiv2(v, mag2(v))
 }
 
-export function dist2(v0: Vec2, v1: Vec2): number {
+export function dist2(v0: Vec2, v1={x: 0.0, y: 0.0}): number {
   return Math.sqrt(Math.pow(v1.x - v0.x, 2) + Math.pow(v1.y - v0.y, 2))
 }
 
-export function direction(angleDegree: number): Vec2 {
+export function direction2(angleDegree: number): Vec2 {
   return {
     x: Math.cos(degToRad(angleDegree)),
     y: Math.sin(degToRad(angleDegree)),
   }
 }
 
-export function angle(v: Vec2): number {
+export function angle2(v: Vec2): number {
   return radToDeg(Math.atan2(v.y, v.x))
 }
 
@@ -195,20 +195,20 @@ export function dotProduct(a: Vec2, b: Vec2): number {
   return (a.x*b.x) + (a.y*b.y)
 }
 
-export function angle3(a: Vec2, b: Vec2): number {
-  return Math.acos((dotProduct(norm(a), norm(b)) / mag(a) * mag(b)))
+export function angle2_v3(a: Vec2, b: Vec2): number {
+  return Math.acos((dotProduct(norm(a), norm(b)) / mag2(a) * mag2(b)))
 }
 
-export function angle2(a: Vec2, b: Vec2): number {
+export function angle2_v2(a: Vec2, b: Vec2): number {
   const ang = Math.atan2(b.y, b.x) - Math.atan2(a.y, a.x)
   return ang
 }
 
-export function rndfVec2d(min: number, max: number): Vec2 {
+export function rndfVec2(min: number, max: number): Vec2 {
   return { x: rndf(min, max), y: rndf(min, max) }
 }
 
-export function limitv(v: Vec2, max: Vec2): Vec2 {
+export function limitVec2(v: Vec2, max: Vec2): Vec2 {
   return { x: limit(v.x, max.x), y: limit(v.y, max.y) }
 }
 
@@ -227,7 +227,7 @@ export function wrap(vector: Vec2, screen: Vec2) {
   }
 }
 
-function mirrorWrap(vector: Vec2, screen: Vec2) {
+function mirrorWrap2(vector: Vec2, screen: Vec2) {
   if (vector.x < 0) {
     vector.x = screen.x
     vector.y = screen.y - vector.y
@@ -246,10 +246,32 @@ function mirrorWrap(vector: Vec2, screen: Vec2) {
   }
 }
 
-export function withinBounds(v: Vec2, maxBound: Vec2, minBound: Vec2 = { x: 0, y: 0 }) {
+export function withinBounds2(v: Vec2, maxBound: Vec2, minBound: Vec2 = { x: 0, y: 0 }) {
   if (v.x > minBound.x) return false
   if (v.x < maxBound.x) return false
   if (v.y > minBound.y) return false
   if (v.y < maxBound.y) return false
   return true
+}
+
+export function offBound2_mm(v: Vec2, bound_min: Vec2, bound_max: Vec2) {
+  if (v.x > bound_max.x) return true
+  if (v.x < bound_min.x) return true
+  if (v.y > bound_max.y) return true
+  if (v.y < bound_min.y) return true
+  return false
+}
+
+export function wrap2_mm(v: Vec2, min: Vec2, max: Vec2, change=true): Vec2 {
+  const tmp = copy2(v)
+  if (tmp.x > max.x) tmp.x = min.x
+  if (tmp.x < min.x) tmp.x = max.x
+  if (tmp.y > max.y) tmp.y = min.y
+  if (tmp.y < min.y) tmp.y = max.y
+  if (change === true) {
+    v = tmp
+    return v
+  } else {
+    return tmp
+  }
 }
