@@ -40,10 +40,10 @@ export function newPoseFromVec3(position: Vec3, rotation: Vec3): Pose {
 }
 
 export function newVec3(x = 0.0, y = 0.0, z = 0.0): Vec3 {
-  return {x: x, y: y, z: z}
+  return { x: x, y: y, z: z }
 }
 
-export function roundVec3(v: Vec3, dec=2): Vec3 {
+export function roundVec3(v: Vec3, dec = 2): Vec3 {
   return {
     x: round2dec(v.x, dec),
     y: round2dec(v.y, dec),
@@ -96,6 +96,14 @@ export function add3(a: Vec3, b: Vec3): Vec3 {
   }
 }
 
+export function mul3(to: Vec3, from: Vec3): Vec3 {
+  const tmp: Vec3 = copy3(to)
+  tmp.x *= from.x
+  tmp.y *= from.y
+  tmp.z *= from.z
+  return tmp
+}
+
 export function copy3(from: Vec3): Vec3 {
   return { x: from.x, y: from.y, z: from.z }
 }
@@ -112,15 +120,15 @@ export function rndfVec3(max: number, min = 0): Vec3 {
   return newVec3(rndf(min, max), rndf(min, max), rndf(min, max))
 }
 
-export function dist3(v0: Vec3, v1 = {x: 0.0, y: 0.0, z: 0.0}): number {
+export function dist3(v0: Vec3, v1 = { x: 0.0, y: 0.0, z: 0.0 }): number {
   return Math.sqrt(Math.pow(v1.x - v0.x, 2) + Math.pow(v1.y - v0.y, 2) + Math.pow(v1.z - v0.z, 2))
 }
 
 export function norm3(a: Vec3): Vec3 {
   return {
-    x: a.x/dist3(a),
-    y: a.y/dist3(a),
-    z: a.z/dist3(a)
+    x: a.x / dist3(a),
+    y: a.y / dist3(a),
+    z: a.z / dist3(a)
   }
 }
 
@@ -169,7 +177,7 @@ export function axisRotation(a: Vec3, b: Vec3): Vec3 {
   const rx_zero = (adj === 0 && adk === 0) || (bdj === 0 && bdk === 0)
   const ry_zero = (adk === 0 && adi === 0) || (bdk === 0 && bdi === 0)
   const rz_zero = (adj === 0 && adi === 0) || (bdj === 0 && bdi === 0)
-  
+
   const rx = (rx_zero ? 0 : Math.atan2(bdj, bdk) - Math.atan2(adj, adk))
   const ry = (ry_zero ? 0 : Math.atan2(bdk, bdi) - Math.atan2(adk, adi))
   const rz = (rz_zero ? 0 : Math.atan2(bdj, bdi) - Math.atan2(adj, adi))
@@ -198,17 +206,17 @@ export function axisRotation(a: Vec3, b: Vec3): Vec3 {
 
 export function rot_mat_x(theta: number): number[][] {
   const mat = [
-    [1, 0,                0              ],
+    [1, 0, 0],
     [0, Math.cos(theta), -Math.sin(theta)],
-    [0, Math.sin(theta),  Math.cos(theta)]
+    [0, Math.sin(theta), Math.cos(theta)]
   ]
   return mat
 }
 
 export function rot_mat_y(theta: number): number[][] {
   const mat = [
-    [Math.cos(theta),  0, Math.sin(theta)],
-    [0,                1,               0],
+    [Math.cos(theta), 0, Math.sin(theta)],
+    [0, 1, 0],
     [-Math.sin(theta), 0, Math.cos(theta)]
   ]
   return mat
@@ -217,8 +225,8 @@ export function rot_mat_y(theta: number): number[][] {
 export function rot_mat_z(theta: number): number[][] {
   const mat = [
     [Math.cos(theta), -Math.sin(theta), 0],
-    [Math.sin(theta),  Math.cos(theta), 0],
-    [0,                0,               1]
+    [Math.sin(theta), Math.cos(theta), 0],
+    [0, 0, 1]
   ]
   return mat
 }
@@ -236,23 +244,23 @@ export function multiply3(v: Vec3, m: number[][]): Vec3 {
 
 export function scale3(v: Vec3, s: number): Vec3 {
   return {
-    x: s*v.x,
-    y: s*v.y,
-    z: s*v.z
+    x: s * v.x,
+    y: s * v.y,
+    z: s * v.z
   }
 }
 
 export function center3(v: Vec3[]): Vec3 {
   let sumx = 0, sumy = 0, sumz = 0
   for (let i = 0; i < v.length; i++) {
-    sumx+=v[i].x
-    sumy+=v[i].y
-    sumz+=v[i].z
+    sumx += v[i].x
+    sumy += v[i].y
+    sumz += v[i].z
   }
-  return newVec3(sumx/v.length, sumy/v.length, sumz/v.length)
+  return newVec3(sumx / v.length, sumy / v.length, sumz / v.length)
 }
 
-export function rotate3(point: Vec3, rotation: Vec3, origin = {x: 0, y: 0, z: 0}): Vec3 {
+export function rotate3(point: Vec3, rotation: Vec3, origin = { x: 0, y: 0, z: 0 }): Vec3 {
   const translated = sub3(point, origin)
   let rotated = translated
   rotated = multiply3(rotated, rot_mat_x(rotation.x))
@@ -270,7 +278,7 @@ export function radToDeg3(r: Vec3): Vec3 {
   }
 }
 
-export function pretty(v: Vec3, d=2): void {
+export function pretty(v: Vec3, d = 2): void {
   const a = radToDeg3(v)
   info(`${round2dec(a.x, d)}, ${round2dec(a.y, d)}, ${round2dec(a.z, 2)}`)
 }

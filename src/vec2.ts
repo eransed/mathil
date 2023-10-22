@@ -45,17 +45,17 @@ export function filterOutClose(v: Vec2[], minDist: number): Vec2[] {
 export function center2(v: Vec2[]): Vec2 {
   let sumx = 0, sumy = 0
   for (let i = 0; i < v.length; i++) {
-    sumx+=v[i].x
-    sumy+=v[i].y
+    sumx += v[i].x
+    sumy += v[i].y
   }
-  return newVec2(sumx/v.length, sumy/v.length)
+  return newVec2(sumx / v.length, sumy / v.length)
 }
 
 export function group(v: Vec2[], radius: number): Vec2[] {
   error('group not implemented')
   throw new Error('group not implemented')
   for (let i = 0; i < v.length; i++) {
-    
+
   }
   return v
 }
@@ -128,6 +128,14 @@ export function sub2(to: Vec2, from: Vec2): Vec2 {
   return tmp
 }
 
+export function mul2(to: Vec2, from: Vec2): Vec2 {
+  const tmp: Vec2 = copy2(to)
+  tmp.x *= from.x
+  tmp.y *= from.y
+  return tmp
+}
+
+
 export function scalarMultiply2(v: Vec2, s: number): Vec2 {
   const tmp: Vec2 = copy2(v)
   tmp.x *= s
@@ -176,7 +184,7 @@ export function norm(v: Vec2): Vec2 {
   return sdiv2(v, mag2(v))
 }
 
-export function dist2(v0: Vec2, v1={x: 0.0, y: 0.0}): number {
+export function dist2(v0: Vec2, v1 = { x: 0.0, y: 0.0 }): number {
   return Math.sqrt(Math.pow(v1.x - v0.x, 2) + Math.pow(v1.y - v0.y, 2))
 }
 
@@ -192,7 +200,7 @@ export function angle2(v: Vec2): number {
 }
 
 export function dotProduct(a: Vec2, b: Vec2): number {
-  return (a.x*b.x) + (a.y*b.y)
+  return (a.x * b.x) + (a.y * b.y)
 }
 
 export function angle2_v3(a: Vec2, b: Vec2): number {
@@ -262,7 +270,7 @@ export function offBound2_mm(v: Vec2, bound_min: Vec2, bound_max: Vec2) {
   return false
 }
 
-export function wrap2_mm(v: Vec2, min: Vec2, max: Vec2, change=true): Vec2 {
+export function wrap2_mm(v: Vec2, min: Vec2, max: Vec2, change = true): Vec2 {
   const tmp = copy2(v)
   if (tmp.x > max.x) tmp.x = min.x
   if (tmp.x < min.x) tmp.x = max.x

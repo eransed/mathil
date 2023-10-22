@@ -1,4 +1,4 @@
-import { Vec2, add2, angle2, direction2, newVec2, smul2 } from "./vec2";
+import { Vec2, add2, angle2, direction2, mul2, newVec2, smul2 } from "./vec2";
 
 export function lineTo(ctx: CanvasRenderingContext2D, v: Vec2) {
   ctx.lineTo(v.x, v.y)
@@ -19,7 +19,7 @@ export function renderVector(
   ctx: CanvasRenderingContext2D,
   v: Vec2,
   origin: Vec2 = { x: 0, y: 0 },
-  scale = 1,
+  scale: Vec2 = { x: 1, y: 1 },
   color = "#000",
   originOffset: Vec2 = { x: 0, y: 0 },
   renderVectorComponents = true,
@@ -31,7 +31,7 @@ export function renderVector(
 ) {
   ctx.save();
 
-  translate(ctx, add2(smul2(origin, scale), smul2(originOffset, scale)))
+  translate(ctx, add2(mul2(origin, scale), mul2(originOffset, scale)))
 
   ctx.beginPath();
   ctx.strokeStyle = color;
@@ -40,25 +40,25 @@ export function renderVector(
   ctx.moveTo(0, 0);
 
   // Do not draw all the way to v end, this will give a better looking arrow tip
-  lineTo(ctx, smul2(v, 0.995 * scale))
+  lineTo(ctx, mul2(v, smul2(scale, 0.995)))
 
   // Draw arrow head
-  const scaledV = smul2(v, scale)
+  const scaledV = mul2(v, scale)
   const angV = angle2(v)
-  const arrowNewScale = scale * arrowScale
+  const arrowNewScale = smul2(scale, arrowScale)
 
   moveTo(ctx, scaledV)
 
   lineTo(ctx, add2(
     scaledV,
-    smul2(direction2(angV + arrowAng), arrowNewScale)
+    mul2(direction2(angV + arrowAng), arrowNewScale)
   ))
 
   moveTo(ctx, scaledV)
 
   lineTo(ctx, add2(
     scaledV,
-    smul2(direction2(angV - arrowAng), arrowNewScale)
+    mul2(direction2(angV - arrowAng), arrowNewScale)
   ))
 
   // Finish path
