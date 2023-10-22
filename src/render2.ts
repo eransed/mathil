@@ -21,6 +21,7 @@ export function renderVector(
   origin: Vec2 = { x: 0, y: 0 },
   scale: Vec2 = { x: 1, y: 1 },
   color = "#000",
+  flipX = true,
   originOffset: Vec2 = { x: 0, y: 0 },
   renderVectorComponents = true,
   lineWidth = 3,
@@ -38,6 +39,10 @@ export function renderVector(
   ctx.lineWidth = lineWidth;
 
   ctx.moveTo(0, 0);
+
+  if (flipX === true) {
+    v.x = -v.x
+  }
 
   // Do not draw all the way to v end, this will give a better looking arrow tip
   lineTo(ctx, mul2(v, smul2(scale, 0.995)))
@@ -67,7 +72,7 @@ export function renderVector(
   ctx.restore();
 
   if (renderVectorComponents) {
-    renderVector(ctx, newVec2(v.x, 0), origin, scale, xColor, originOffset, false);
-    renderVector(ctx, newVec2(0, v.y), origin, scale, yColor, originOffset, false);
+    renderVector(ctx, newVec2(v.x, 0), origin, scale, xColor, flipX, originOffset, false);
+    renderVector(ctx, newVec2(0, v.y), origin, scale, yColor, flipX, originOffset, false);
   }
 }
