@@ -1,9 +1,9 @@
 {
   "name": "mathil",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "author": "eransed",
   "homepage": "https://github.com/eransed/mathil",
-  "description": "Library for 2D and 3D math, canvas rendering and other relevant utils",
+  "description": "Toy math library",
   "keywords": [
     "math",
     "2D",

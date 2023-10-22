@@ -1,5 +1,6 @@
 import { info } from "./log"
 import { radToDeg, rndf, round2dec } from "./number"
+import { Vec2 } from "./vec2"
 
 export interface Vec3 {
   x: number
@@ -49,6 +50,23 @@ export function roundVec3(v: Vec3, dec=2): Vec3 {
     z: round2dec(v.z, dec)
   }
 }
+
+export function dropz(v: Vec3): Vec2 {
+  return {
+    x: v.x,
+    y: v.y
+  }
+}
+
+export function to3(v: Vec2): Vec3 {
+  return {
+    x: v.x,
+    y: v.y,
+    z: 0.0
+  }
+}
+
+
 
 export function equal3(v0: Vec3, v1: Vec3): boolean {
   if (v0.x === v1.x && v0.y === v1.y && v0.z === v1.z) {
