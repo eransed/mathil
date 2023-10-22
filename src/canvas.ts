@@ -1,5 +1,5 @@
 import { linearTransform } from "./number"
-import { Vec2, floor } from "./vec2"
+import { Vec2, floor2 } from "./vec2"
 
 export function clearScreen(ctx: CanvasRenderingContext2D, color = "#000") {
   ctx.fillStyle = color
@@ -24,7 +24,7 @@ export function setCanvasSize(ctx: CanvasRenderingContext2D, screenScale = 1): v
 }
 
 export function getScreenCenterPosition(ctx: CanvasRenderingContext2D): Vec2 {
-  return floor({ x: ctx.canvas.width / 2, y: ctx.canvas.height / 2 })
+  return floor2({ x: ctx.canvas.width / 2, y: ctx.canvas.height / 2 })
 }
 
 export function getScreenCenterPositionFromClient() {
