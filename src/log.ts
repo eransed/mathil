@@ -47,7 +47,7 @@ function fnNameLine(): string {
     }
 
   } catch(e) {
-
+    return '<!>'
   }
   return '<?>'
 }
@@ -73,19 +73,58 @@ export function usNow() {
   return performance.now() * 1000
 }
 
-export function usPretty(us: number): string {
+// export function usPretty(us: number): string {
+//   const D = 24 * 60 * 60 * 1e6
+//   const H = 60 * 60 * 1e6
+//   const M = 60 * 1e6
+//   const S = 1e6
+//   const MS = 1e3
+//   const mu = '\u03BC'
+//   if (us >= D) return `${round2dec(us / D, 2)}d`
+//   if (us >= H) return `${round2dec(us / H, 1)}h`
+//   if (us >= M) return `${round2dec(us / M, 1)}m`
+//   if (us >= S) return `${round2dec(us / S, 1)}s`
+//   if (us >= MS) return `${round2dec(us / MS, 1)}ms`
+//   return `${round2dec(us, 0)}${mu}s`
+// }
+
+export function usPretty(us: number, dec = 1, decDay = 2): string {
   const D = 24 * 60 * 60 * 1e6
   const H = 60 * 60 * 1e6
   const M = 60 * 1e6
   const S = 1e6
   const MS = 1e3
   const mu = '\u03BC'
-  if (us >= D) return `${round2dec(us / D, 2)}d`
-  if (us >= H) return `${round2dec(us / H, 1)}h`
-  if (us >= M) return `${round2dec(us / M, 1)}m`
-  if (us >= S) return `${round2dec(us / S, 1)}s`
-  if (us >= MS) return `${round2dec(us / MS, 1)}ms`
+  if (us >= D) return `${round2dec(us / D, decDay)}d`
+  if (us >= H) return `${round2dec(us / H, dec)}h`
+  if (us >= M) return `${round2dec(us / M, dec)}m`
+  if (us >= S) return `${round2dec(us / S, dec)}s`
+  if (us >= MS) return `${round2dec(us / MS, dec)}ms`
   return `${round2dec(us, 0)}${mu}s`
+}
+
+export interface Dimension<T> {
+  value: T
+  unit: string
+}
+
+export function dimStr<T>(dim: Dimension<T>): string {
+  return `${dim.value}${dim.unit}`
+}
+
+export function usPretty2(us: number, dec=1, decDay=2): Dimension<string> {
+  const D = 24 * 60 * 60 * 1e6
+  const H = 60 * 60 * 1e6
+  const M = 60 * 1e6
+  const S = 1e6
+  const MS = 1e3
+  const mu = '\u03BC'
+  if (us >= D) return {value: `${(us / D).toFixed(decDay)}`, unit: 'd'}
+  if (us >= H) return {value: `${(us / H).toFixed(dec)}`, unit: 'h'}
+  if (us >= M) return {value: `${(us / M).toFixed(dec)}`, unit: 'm'}
+  if (us >= S) return {value: `${(us / S).toFixed(dec)}`, unit: 's'}
+  if (us >= MS) return {value: `${(us / MS).toFixed(dec)}`, unit: 'ms'}
+  return {value: `${(us).toFixed(0)}`, unit: `${mu}s`}
 }
 
 export function log(str: string): void {

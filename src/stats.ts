@@ -1,5 +1,5 @@
-import { linearTransform, round2dec, siPretty } from '../src/number'
-import { type Vec2, newVec2 } from '../src/vec2'
+import { linearTransform, round2dec, siPretty } from './number'
+import { type Vec2, newVec2 } from './vec2'
 
 const defaultSize = 500
 // export const GRAPHS: DataStats[] = []

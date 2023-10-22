@@ -1,5 +1,5 @@
 import { linearTransform } from "./number"
-import { Vec2, floor, to_string2 } from "./vec2"
+import { Vec2, floor } from "./vec2"
 
 export function clearScreen(ctx: CanvasRenderingContext2D, color = "#000") {
   ctx.fillStyle = color
