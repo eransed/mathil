@@ -6,7 +6,10 @@
   "description": "Toy math library",
   "keywords": [
     "math",
+    "vector",
+    "geometry",
     "2D",
+    "3D",
     "canvas",
     "utils"
   ],

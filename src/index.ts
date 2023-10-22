@@ -8,4 +8,4 @@ export * from './rect'
 export * from './tester'
 export * from './stats'
 export * from './vec3'
-
+export * from './render2'
