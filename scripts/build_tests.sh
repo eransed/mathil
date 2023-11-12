@@ -1,3 +1,4 @@
 #!/bin/bash
+./tsc_version.sh
 cd ../tests
-npx tsc
+npx -p typescript tsc

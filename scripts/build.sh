@@ -1,5 +1,5 @@
 #!/bin/bash
+./tsc_version.sh
 rm -rfv ../dist
 cd ../src
-npm i
-npx tsc
+npx -p typescript tsc

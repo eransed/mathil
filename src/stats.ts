@@ -1,3 +1,4 @@
+import { rgbaColor } from './color'
 import { linearTransform, round2dec, siPretty } from './number'
 import { type Vec2, newVec2 } from './vec2'
 
@@ -274,14 +275,6 @@ export function setFontSize(ctx: CanvasRenderingContext2D, size: number, bold = 
     }
 }
 
-export function rgbColor(r=0, g=0, b=0): string {
-    return `rgb(${r}, ${g}, ${b})`
-}
-
-export function rgbaColor(r=0, g=0, b=0, a=1): string {
-    return `rgba(${r}, ${g}, ${b}, ${a})`
-}
-
 export function renderGraph(ds: DataStats, style: DataStatsGraphStyle, ctx: CanvasRenderingContext2D): void {
 
     const labelY = -Math.floor(style.edgePad * 1.5)
@@ -309,11 +302,11 @@ export function renderGraph(ds: DataStats, style: DataStatsGraphStyle, ctx: Canv
     ctx.save()
     ctx.translate(topLeft.x, topLeft.y)
     ctx.fillStyle = style.baseColor
-    
+
     if (style.showText) {
         setFontSize(ctx, style.textSize, style.boldText)
     }
-    
+
     ctx.strokeStyle = style.rectOutlineColor
     if (style.rectOutlineVisible) {
         ctx.lineWidth = style.rectOutLineWidth
