@@ -20,10 +20,9 @@
     "/dist"
   ],
   "scripts": {
-    "build": "npx tsc",
-    "build-test": "cd tests && npx tsc",
-    "test": "npm run build && npm run build-test && node ./dist_test/tests/test.js",
-    "build-web": "pwd && npx tsc -p ./tests/tsconfig_web.json"
+    "build": "npm i && npm ls && npx -p typescript tsc --version && npx -p typescript tsc",
+    "test": "npm run build && node ./dist_test/tests/test.js",
+    "publish": "npm run build && npm test && npm publish"
   },
   "license": "MIT",
   "devDependencies": {
