@@ -4,7 +4,7 @@ import { Vec3 } from "./vec3"
 
 export function newMat(rows: number, columns: number, initValue = 0): number[][] {
   if (rows < 1 || columns < 1) {
-    throw new Error("Can not create empty matrix")
+    throw new Error(`Can not create empty matrix, r=${rows}, c=${columns}`)
   }
 
   // const m = [
