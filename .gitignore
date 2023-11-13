@@ -1,4 +1,3 @@
 dist
-dist_test
-dist_test_web
+test_build
 node_modules
