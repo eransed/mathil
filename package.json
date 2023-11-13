@@ -22,11 +22,12 @@
   "scripts": {
     "update_version_file": "npm i && npm ls && cd src && node ./_prebuild.mjs",
     "build": "npm run update_version_file && npx -p typescript tsc",
-    "test": "npm run update_version_file && cd tests && npx -p typescript tsc && node ../test_build/tests/test.js",
+    "test": "npm run update_version_file && cd tests && npx -p typescript tsc && node ../test_build/tests/test.js && npm view mathil",
     "publish": "npm run build && npm test && npm publish"
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.9.0",
     "typescript": "^5.2.2"
   }
 }

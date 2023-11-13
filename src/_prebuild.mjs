@@ -12,6 +12,7 @@ try {
     node_version: process.version,
     build_date_gmt: gmt,
     build_date_local: loc,
+    extra_info: "",
   };
   console.log(ver);
   const ver_ts_line = `export const mathil_info = ${JSON.stringify(ver)}`;
