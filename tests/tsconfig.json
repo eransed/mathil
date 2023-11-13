@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "target": "ES2017",
     "declaration": false,
-    "outDir": "../dist_test"
+    "outDir": "../test_build"
   },
   "include": [
     "./**/*"

@@ -1,8 +1,6 @@
 import { bad, dimStr, error, good, info, log, usNow, usPretty, usPretty2, warn } from "../src/log";
 
 export function run_log_tests() {
-
-    
     
     const startTime = usNow()
     

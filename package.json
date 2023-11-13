@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "build": "npm i && npm ls && npx -p typescript tsc --version && npx -p typescript tsc",
-    "test": "npm run build && node ./dist_test/tests/test.js",
+    "test": "npm i && npm ls && cd tests && npx -p typescript tsc && node ../test_build/tests/test.js",
     "publish": "npm run build && npm test && npm publish"
   },
   "license": "MIT",
