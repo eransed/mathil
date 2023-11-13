@@ -1,4 +1,7 @@
 import { readFileSync, writeFileSync } from "fs";
+import { cpus } from "node:os";
+import { availableParallelism, totalmem } from "os";
+const cpu = cpus()[0];
 const file = "../package.json";
 const json = JSON.parse(readFileSync(file));
 try {
@@ -12,6 +15,12 @@ try {
     node_version: process.version,
     build_date_gmt: gmt,
     build_date_local: loc,
+    platform: process.platform,
+    arch: process.arch,
+    cpu_model: cpu.model,
+    cpu_ghz: (cpu.speed / 1000).toFixed(1),
+    cpu_parallelism: availableParallelism(),
+    ram_gb: (totalmem() / Math.pow(Math.pow(2, 10), 3)).toFixed(1),
     extra_info: "",
   };
   console.log(ver);
