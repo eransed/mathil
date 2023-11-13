@@ -20,8 +20,9 @@
     "/dist"
   ],
   "scripts": {
-    "build": "npm i && npm ls && npx -p typescript tsc --version && npx -p typescript tsc",
-    "test": "npm i && npm ls && cd tests && npx -p typescript tsc && node ../test_build/tests/test.js",
+    "prebuild": "npm i && npm ls && cd src && node ./_prebuild.mjs",
+    "build": "npm run prebuild && npx -p typescript tsc --version && npx -p typescript tsc",
+    "test": "npm run prebuild && cd tests && npx -p typescript tsc && node ../test_build/tests/test.js",
     "publish": "npm run build && npm test && npm publish"
   },
   "license": "MIT",
