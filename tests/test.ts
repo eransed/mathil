@@ -3,7 +3,7 @@ import { runColorTests } from "./test_color";
 import { run_log_tests } from "./test_log";
 import { basic_matrixMul, basic_newMat } from "./test_matrix";
 import { runDist2Tests, runVec2Tests, runVec3Tests } from "./test_vec2";
-import { getVersion, getVersionInfo } from "../src/_package_info"
+import { getVersion, getVersionInfo } from "../src/package_info"
 
 const test_start_time_us = usNow()
 
