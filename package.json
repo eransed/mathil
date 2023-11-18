@@ -24,12 +24,14 @@
     "build": "npm run update_version_file && npx -p typescript tsc",
     "test": "npm run update_version_file && cd tests && npx -p typescript tsc && node ../test_build/tests/test.js",
     "publish": "npm run build && npm test && npm publish",
-    "doc": "npx typedoc --out docs src/index.ts"
+    "doc": "npx typedoc --includeVersion --out docs src/index.ts",
+    "doc_md": "npx typedoc --includeVersion --plugin typedoc-plugin-markdown --out docs-md src/index.ts"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.9.0",
     "typedoc": "^0.25.3",
+    "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "^5.2.2"
   }
 }
