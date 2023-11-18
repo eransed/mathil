@@ -23,11 +23,13 @@
     "update_version_file": "npm i && npm ls && cd src && node ./_prebuild.mjs",
     "build": "npm run update_version_file && npx -p typescript tsc",
     "test": "npm run update_version_file && cd tests && npx -p typescript tsc && node ../test_build/tests/test.js",
-    "publish": "npm run build && npm test && npm publish"
+    "publish": "npm run build && npm test && npm publish",
+    "doc": "npx typedoc --out docs src/index.ts"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.9.0",
+    "typedoc": "^0.25.3",
     "typescript": "^5.2.2"
   }
 }
