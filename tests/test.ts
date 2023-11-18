@@ -4,6 +4,7 @@ import { run_log_tests } from "./test_log";
 import { basic_matrixMul, basic_newMat } from "./test_matrix";
 import { runDist2Tests, runVec2Tests, runVec3Tests } from "./test_vec2";
 import { getVersion, getVersionInfo } from "../src/package_info"
+import { run_geo_tests } from "./test_geometry";
 
 const test_start_time_us = usNow()
 
@@ -16,6 +17,7 @@ runDist2Tests()
 runColorTests()
 basic_newMat()
 basic_matrixMul()
+run_geo_tests()
 
 process.on('exit', (code) => {
   info('\nBuild info:')
