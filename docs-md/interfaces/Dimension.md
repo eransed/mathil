@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[log.ts:108](https://github.com/eransed/mathil/blob/3e71dd6/src/log.ts#L108)
+[log.ts:108](https://github.com/eransed/mathil/blob/84118e9/src/log.ts#L108)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[log.ts:107](https://github.com/eransed/mathil/blob/3e71dd6/src/log.ts#L107)
+[log.ts:107](https://github.com/eransed/mathil/blob/84118e9/src/log.ts#L107)

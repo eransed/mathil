@@ -35,7 +35,7 @@
 
 #### Defined in
 
-[stats.ts:13](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L13)
+[stats.ts:13](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L13)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[stats.ts:11](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L11)
+[stats.ts:11](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L11)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[stats.ts:12](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L12)
+[stats.ts:12](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L12)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[stats.ts:26](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L26)
+[stats.ts:26](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L26)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[stats.ts:24](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L24)
+[stats.ts:24](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L24)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[stats.ts:9](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L9)
+[stats.ts:9](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L9)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[stats.ts:25](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L25)
+[stats.ts:25](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L25)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[stats.ts:28](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L28)
+[stats.ts:28](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L28)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[stats.ts:14](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L14)
+[stats.ts:14](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L14)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[stats.ts:17](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L17)
+[stats.ts:17](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L17)
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 #### Defined in
 
-[stats.ts:10](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L10)
+[stats.ts:10](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L10)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[stats.ts:20](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L20)
+[stats.ts:20](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L20)
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 #### Defined in
 
-[stats.ts:21](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L21)
+[stats.ts:21](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L21)
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[stats.ts:18](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L18)
+[stats.ts:18](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L18)
 
 ___
 
@@ -191,7 +191,7 @@ ___
 
 #### Defined in
 
-[stats.ts:27](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L27)
+[stats.ts:27](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L27)
 
 ___
 
@@ -201,7 +201,7 @@ ___
 
 #### Defined in
 
-[stats.ts:19](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L19)
+[stats.ts:19](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L19)
 
 ___
 
@@ -211,7 +211,7 @@ ___
 
 #### Defined in
 
-[stats.ts:23](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L23)
+[stats.ts:23](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L23)
 
 ___
 
@@ -221,7 +221,7 @@ ___
 
 #### Defined in
 
-[stats.ts:15](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L15)
+[stats.ts:15](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L15)
 
 ___
 
@@ -231,7 +231,7 @@ ___
 
 #### Defined in
 
-[stats.ts:22](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L22)
+[stats.ts:22](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L22)
 
 ___
 
@@ -241,4 +241,4 @@ ___
 
 #### Defined in
 
-[stats.ts:16](https://github.com/eransed/mathil/blob/3e71dd6/src/stats.ts#L16)
+[stats.ts:16](https://github.com/eransed/mathil/blob/84118e9/src/stats.ts#L16)

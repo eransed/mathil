@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[other.ts:25](https://github.com/eransed/mathil/blob/3e71dd6/src/other.ts#L25)
+[other.ts:25](https://github.com/eransed/mathil/blob/84118e9/src/other.ts#L25)
 
 ## Properties
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[other.ts:23](https://github.com/eransed/mathil/blob/3e71dd6/src/other.ts#L23)
+[other.ts:23](https://github.com/eransed/mathil/blob/84118e9/src/other.ts#L23)
 
 ___
 
@@ -64,4 +64,4 @@ ___
 
 #### Defined in
 
-[other.ts:24](https://github.com/eransed/mathil/blob/3e71dd6/src/other.ts#L24)
+[other.ts:24](https://github.com/eransed/mathil/blob/84118e9/src/other.ts#L24)

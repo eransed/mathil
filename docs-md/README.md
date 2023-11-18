@@ -4,8 +4,6 @@ mathil / [Exports](modules.md)
 
 Toy math library
 
-[Docs](docs-md/modules.md)
-
 Build
 
 ```
@@ -18,4 +16,8 @@ Test
 npm test
 ```
 
-https://www.npmjs.com/package/mathil
+[Docs](https://eransed.github.io/mathil/)
+
+[GitHub](https://github.com/eransed/mathil)
+
+[NPM](https://www.npmjs.com/package/mathil)

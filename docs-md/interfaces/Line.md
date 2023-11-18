@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[line.ts:4](https://github.com/eransed/mathil/blob/3e71dd6/src/line.ts#L4)
+[line.ts:4](https://github.com/eransed/mathil/blob/84118e9/src/line.ts#L4)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[line.ts:5](https://github.com/eransed/mathil/blob/3e71dd6/src/line.ts#L5)
+[line.ts:5](https://github.com/eransed/mathil/blob/84118e9/src/line.ts#L5)

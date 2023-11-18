@@ -2,8 +2,6 @@
 
 Toy math library
 
-[Docs](docs-md/modules.md)
-
 Build
 
 ```
@@ -16,6 +14,8 @@ Test
 npm test
 ```
 
-https://github.com/eransed/mathil
+[Docs](https://eransed.github.io/mathil/)
 
-https://www.npmjs.com/package/mathil
+[GitHub](https://github.com/eransed/mathil)
+
+[NPM](https://www.npmjs.com/package/mathil)

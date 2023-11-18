@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[rect.ts:7](https://github.com/eransed/mathil/blob/3e71dd6/src/rect.ts#L7)
+[rect.ts:7](https://github.com/eransed/mathil/blob/84118e9/src/rect.ts#L7)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[rect.ts:6](https://github.com/eransed/mathil/blob/3e71dd6/src/rect.ts#L6)
+[rect.ts:6](https://github.com/eransed/mathil/blob/84118e9/src/rect.ts#L6)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[rect.ts:4](https://github.com/eransed/mathil/blob/3e71dd6/src/rect.ts#L4)
+[rect.ts:4](https://github.com/eransed/mathil/blob/84118e9/src/rect.ts#L4)
 
 ___
 
@@ -49,4 +49,4 @@ ___
 
 #### Defined in
 
-[rect.ts:5](https://github.com/eransed/mathil/blob/3e71dd6/src/rect.ts#L5)
+[rect.ts:5](https://github.com/eransed/mathil/blob/84118e9/src/rect.ts#L5)
