@@ -1,4 +1,4 @@
-[mathil - v0.12.0](../README.md) / [Exports](../modules.md) / Dimension
+[mathil - v0.12.1](../README.md) / [Exports](../modules.md) / Dimension
 
 # Interface: Dimension\<T\>
 
@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[log.ts:108](https://github.com/eransed/mathil/blob/84118e9/src/log.ts#L108)
+[log.ts:108](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L108)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 #### Defined in
 
-[log.ts:107](https://github.com/eransed/mathil/blob/84118e9/src/log.ts#L107)
+[log.ts:107](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L107)

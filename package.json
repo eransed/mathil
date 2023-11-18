@@ -1,6 +1,6 @@
 {
   "name": "mathil",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "author": "eransed",
   "homepage": "https://github.com/eransed/mathil",
   "description": "Toy math library",
@@ -23,7 +23,7 @@
     "update_version_file": "npm i && npm ls && cd src && node ./_prebuild.mjs",
     "build": "npm run update_version_file && npx -p typescript tsc",
     "test": "npm run update_version_file && cd tests && npx -p typescript tsc && node ../test_build/tests/test.js",
-    "publish": "npm run build && npm test && npm publish",
+    "prepare-publish": "npm run build && npm test && npm run doc && npm run doc_md",
     "doc": "npx typedoc --includeVersion --out docs src/index.ts",
     "doc_md": "npx typedoc --includeVersion --plugin typedoc-plugin-markdown --out docs-md src/index.ts"
   },
