@@ -11,7 +11,8 @@ export class Tester<T, U extends (...p: any) => T> {
   constructor(_eq: (a: T, b: T) => boolean, _to_str: (t: T) => string, testName = '_default_') {
     this.eq = _eq
     // this.to_str = _to_str
-    this.to_str = (o: any) => {return JSON.stringify(o)}
+    this.to_str = (o: any) => { return JSON.stringify(o) }
+    console.log()
     log(`Testing: ${testName} ${this.eq.name}`)
     this.startTime = usNow()
   }
@@ -41,8 +42,8 @@ export class Tester<T, U extends (...p: any) => T> {
     const total: number = this.passed + this.failed
     const runTime = usPretty(usNow() - this.startTime)
     let percent = 0
-    if (total > 0) percent = round2dec(this.passed/total*100, 1)
-    log(`${percent}%, ${this.passed}/${total} test(s) passed   T=${runTime}`)
+    if (total > 0) percent = round2dec(this.passed / total * 100, 1)
+    log(`${percent}%, ${this.passed}/${total} test(s) passed   T=${runTime}\n`)
   }
 }
 
