@@ -2,6 +2,12 @@
 
 Toy math library
 
+Install
+
+```
+npm i mathil
+```
+
 Build
 
 ```
