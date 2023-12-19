@@ -1,6 +1,6 @@
-[mathil - v0.12.1](README.md) / Exports
+[mathil - v0.13.0](README.md) / Exports
 
-# mathil - v0.12.1
+# mathil - v0.13.0
 
 ## Table of contents
 
@@ -8,6 +8,7 @@
 
 - [EveryInterval](classes/EveryInterval.md)
 - [Pair](classes/Pair.md)
+- [Pinger](classes/Pinger.md)
 - [Tester](classes/Tester.md)
 
 ### Interfaces
@@ -16,6 +17,7 @@
 - [DataStatsGraphStyle](interfaces/DataStatsGraphStyle.md)
 - [Dimension](interfaces/Dimension.md)
 - [Line](interfaces/Line.md)
+- [PingData](interfaces/PingData.md)
 - [Pose](interfaces/Pose.md)
 - [Rect](interfaces/Rect.md)
 - [Vec2](interfaces/Vec2.md)
@@ -45,6 +47,7 @@
 - [copy2](modules.md#copy2)
 - [copy3](modules.md#copy3)
 - [cross](modules.md#cross)
+- [cryptoRandom](modules.md#cryptorandom)
 - [dateTimeFormat](modules.md#datetimeformat)
 - [dateTimeStamp](modules.md#datetimestamp)
 - [degToRad](modules.md#degtorad)
@@ -88,6 +91,8 @@
 - [log](modules.md#log)
 - [mag2](modules.md#mag2)
 - [magnitude2](modules.md#magnitude2)
+- [makePingData](modules.md#makepingdata)
+- [makePingId](modules.md#makepingid)
 - [matMul](modules.md#matmul)
 - [matMulDefined](modules.md#matmuldefined)
 - [matToVec2](modules.md#mattovec2)
@@ -114,6 +119,8 @@
 - [radToDeg3](modules.md#radtodeg3)
 - [renderGraph](modules.md#rendergraph)
 - [renderVector](modules.md#rendervector)
+- [rndStr](modules.md#rndstr)
+- [rndStr\_](modules.md#rndstr_)
 - [rndf](modules.md#rndf)
 - [rndfVec2](modules.md#rndfvec2)
 - [rndfVec3](modules.md#rndfvec3)
@@ -172,7 +179,7 @@
 
 #### Defined in
 
-[vec2.ts:117](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L117)
+[vec2.ts:117](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L117)
 
 ___
 
@@ -193,7 +200,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:91](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L91)
+[vec3.ts:91](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L91)
 
 ___
 
@@ -214,7 +221,7 @@ ___
 
 #### Defined in
 
-[stats.ts:112](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L112)
+[stats.ts:112](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L112)
 
 ___
 
@@ -234,7 +241,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:198](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L198)
+[vec2.ts:198](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L198)
 
 ___
 
@@ -255,7 +262,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:210](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L210)
+[vec2.ts:210](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L210)
 
 ___
 
@@ -276,7 +283,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:206](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L206)
+[vec2.ts:206](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L206)
 
 ___
 
@@ -297,7 +304,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:140](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L140)
+[vec3.ts:140](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L140)
 
 ___
 
@@ -318,7 +325,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:152](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L152)
+[vec3.ts:152](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L152)
 
 ___
 
@@ -338,7 +345,7 @@ ___
 
 #### Defined in
 
-[log.ts:155](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L155)
+[log.ts:155](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L155)
 
 ___
 
@@ -358,7 +365,7 @@ ___
 
 #### Defined in
 
-[stats.ts:247](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L247)
+[stats.ts:247](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L247)
 
 ___
 
@@ -378,7 +385,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:69](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L69)
+[vec2.ts:69](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L69)
 
 ___
 
@@ -398,7 +405,7 @@ ___
 
 #### Defined in
 
-[rect.ts:10](https://github.com/eransed/mathil/blob/c60aaf8/src/rect.ts#L10)
+[rect.ts:10](https://github.com/eransed/mathil/blob/0629cd8/src/rect.ts#L10)
 
 ___
 
@@ -422,7 +429,7 @@ the geometric center point
 
 #### Defined in
 
-[vec2.ts:45](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L45)
+[vec2.ts:45](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L45)
 
 ___
 
@@ -442,7 +449,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:253](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L253)
+[vec3.ts:253](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L253)
 
 ___
 
@@ -467,7 +474,7 @@ the chord length
 
 #### Defined in
 
-[geometry.ts:8](https://github.com/eransed/mathil/blob/c60aaf8/src/geometry.ts#L8)
+[geometry.ts:8](https://github.com/eransed/mathil/blob/0629cd8/src/geometry.ts#L8)
 
 ___
 
@@ -488,7 +495,7 @@ ___
 
 #### Defined in
 
-[canvas.ts:4](https://github.com/eransed/mathil/blob/c60aaf8/src/canvas.ts#L4)
+[canvas.ts:4](https://github.com/eransed/mathil/blob/0629cd8/src/canvas.ts#L4)
 
 ___
 
@@ -508,7 +515,7 @@ ___
 
 #### Defined in
 
-[stats.ts:210](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L210)
+[stats.ts:210](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L210)
 
 ___
 
@@ -529,7 +536,7 @@ ___
 
 #### Defined in
 
-[line.ts:39](https://github.com/eransed/mathil/blob/c60aaf8/src/line.ts#L39)
+[line.ts:39](https://github.com/eransed/mathil/blob/0629cd8/src/line.ts#L39)
 
 ___
 
@@ -549,7 +556,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:92](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L92)
+[vec2.ts:92](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L92)
 
 ___
 
@@ -569,7 +576,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:113](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L113)
+[vec2.ts:113](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L113)
 
 ___
 
@@ -589,7 +596,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:107](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L107)
+[vec3.ts:107](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L107)
 
 ___
 
@@ -610,7 +617,21 @@ ___
 
 #### Defined in
 
-[vec3.ts:144](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L144)
+[vec3.ts:144](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L144)
+
+___
+
+### cryptoRandom
+
+▸ **cryptoRandom**(): `number`
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+ping.ts:17
 
 ___
 
@@ -630,7 +651,7 @@ ___
 
 #### Defined in
 
-[log.ts:62](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L62)
+[log.ts:62](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L62)
 
 ___
 
@@ -644,7 +665,7 @@ ___
 
 #### Defined in
 
-[log.ts:67](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L67)
+[log.ts:67](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L67)
 
 ___
 
@@ -664,7 +685,7 @@ ___
 
 #### Defined in
 
-[number.ts:25](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L25)
+[number.ts:25](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L25)
 
 ___
 
@@ -690,7 +711,7 @@ ___
 
 #### Defined in
 
-[log.ts:111](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L111)
+[log.ts:111](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L111)
 
 ___
 
@@ -710,7 +731,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:191](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L191)
+[vec2.ts:191](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L191)
 
 ___
 
@@ -733,7 +754,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:187](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L187)
+[vec2.ts:187](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L187)
 
 ___
 
@@ -757,7 +778,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:123](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L123)
+[vec3.ts:123](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L123)
 
 ___
 
@@ -778,7 +799,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:135](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L135)
+[vec3.ts:135](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L135)
 
 ___
 
@@ -799,7 +820,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:202](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L202)
+[vec2.ts:202](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L202)
 
 ___
 
@@ -819,7 +840,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:54](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L54)
+[vec3.ts:54](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L54)
 
 ___
 
@@ -840,7 +861,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:98](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L98)
+[vec2.ts:98](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L98)
 
 ___
 
@@ -861,7 +882,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:71](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L71)
+[vec3.ts:71](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L71)
 
 ___
 
@@ -882,7 +903,7 @@ ___
 
 #### Defined in
 
-[tester.ts:49](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L49)
+[tester.ts:50](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L50)
 
 ___
 
@@ -902,7 +923,7 @@ ___
 
 #### Defined in
 
-[log.ts:145](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L145)
+[log.ts:145](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L145)
 
 ___
 
@@ -923,7 +944,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:26](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L26)
+[vec2.ts:26](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L26)
 
 ___
 
@@ -943,7 +964,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:171](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L171)
+[vec2.ts:171](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L171)
 
 ___
 
@@ -963,7 +984,7 @@ ___
 
 #### Defined in
 
-[stats.ts:127](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L127)
+[stats.ts:127](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L127)
 
 ___
 
@@ -983,7 +1004,7 @@ ___
 
 #### Defined in
 
-[canvas.ts:37](https://github.com/eransed/mathil/blob/c60aaf8/src/canvas.ts#L37)
+[canvas.ts:37](https://github.com/eransed/mathil/blob/0629cd8/src/canvas.ts#L37)
 
 ___
 
@@ -997,7 +1018,7 @@ ___
 
 #### Defined in
 
-[package_info.ts:7](https://github.com/eransed/mathil/blob/c60aaf8/src/package_info.ts#L7)
+[package_info.ts:7](https://github.com/eransed/mathil/blob/0629cd8/src/package_info.ts#L7)
 
 ___
 
@@ -1018,7 +1039,7 @@ ___
 
 #### Defined in
 
-[stats.ts:121](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L121)
+[stats.ts:121](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L121)
 
 ___
 
@@ -1038,7 +1059,7 @@ ___
 
 #### Defined in
 
-[stats.ts:135](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L135)
+[stats.ts:135](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L135)
 
 ___
 
@@ -1058,7 +1079,7 @@ ___
 
 #### Defined in
 
-[stats.ts:131](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L131)
+[stats.ts:131](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L131)
 
 ___
 
@@ -1085,7 +1106,7 @@ ___
 
 #### Defined in
 
-[canvas.ts:41](https://github.com/eransed/mathil/blob/c60aaf8/src/canvas.ts#L41)
+[canvas.ts:41](https://github.com/eransed/mathil/blob/0629cd8/src/canvas.ts#L41)
 
 ___
 
@@ -1099,7 +1120,7 @@ ___
 
 #### Defined in
 
-[package_info.ts:19](https://github.com/eransed/mathil/blob/c60aaf8/src/package_info.ts#L19)
+[package_info.ts:19](https://github.com/eransed/mathil/blob/0629cd8/src/package_info.ts#L19)
 
 ___
 
@@ -1113,7 +1134,7 @@ ___
 
 #### Defined in
 
-[package_info.ts:11](https://github.com/eransed/mathil/blob/c60aaf8/src/package_info.ts#L11)
+[package_info.ts:11](https://github.com/eransed/mathil/blob/0629cd8/src/package_info.ts#L11)
 
 ___
 
@@ -1133,7 +1154,7 @@ ___
 
 #### Defined in
 
-[canvas.ts:26](https://github.com/eransed/mathil/blob/c60aaf8/src/canvas.ts#L26)
+[canvas.ts:26](https://github.com/eransed/mathil/blob/0629cd8/src/canvas.ts#L26)
 
 ___
 
@@ -1152,7 +1173,7 @@ ___
 
 #### Defined in
 
-[canvas.ts:30](https://github.com/eransed/mathil/blob/c60aaf8/src/canvas.ts#L30)
+[canvas.ts:30](https://github.com/eransed/mathil/blob/0629cd8/src/canvas.ts#L30)
 
 ___
 
@@ -1172,7 +1193,7 @@ ___
 
 #### Defined in
 
-[canvas.ts:9](https://github.com/eransed/mathil/blob/c60aaf8/src/canvas.ts#L9)
+[canvas.ts:9](https://github.com/eransed/mathil/blob/0629cd8/src/canvas.ts#L9)
 
 ___
 
@@ -1186,7 +1207,7 @@ ___
 
 #### Defined in
 
-[package_info.ts:15](https://github.com/eransed/mathil/blob/c60aaf8/src/package_info.ts#L15)
+[package_info.ts:15](https://github.com/eransed/mathil/blob/0629cd8/src/package_info.ts#L15)
 
 ___
 
@@ -1214,7 +1235,7 @@ ___
 
 #### Defined in
 
-[package_info.ts:3](https://github.com/eransed/mathil/blob/c60aaf8/src/package_info.ts#L3)
+[package_info.ts:3](https://github.com/eransed/mathil/blob/0629cd8/src/package_info.ts#L3)
 
 ___
 
@@ -1234,7 +1255,7 @@ ___
 
 #### Defined in
 
-[log.ts:150](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L150)
+[log.ts:150](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L150)
 
 ___
 
@@ -1255,7 +1276,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:54](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L54)
+[vec2.ts:54](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L54)
 
 ___
 
@@ -1275,7 +1296,7 @@ ___
 
 #### Defined in
 
-[log.ts:135](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L135)
+[log.ts:135](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L135)
 
 ___
 
@@ -1296,7 +1317,7 @@ ___
 
 #### Defined in
 
-[line.ts:8](https://github.com/eransed/mathil/blob/c60aaf8/src/line.ts#L8)
+[line.ts:8](https://github.com/eransed/mathil/blob/0629cd8/src/line.ts#L8)
 
 ___
 
@@ -1318,7 +1339,7 @@ ___
 
 #### Defined in
 
-[number.ts:60](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L60)
+[number.ts:60](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L60)
 
 ___
 
@@ -1339,7 +1360,7 @@ ___
 
 #### Defined in
 
-[number.ts:12](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L12)
+[number.ts:12](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L12)
 
 ___
 
@@ -1360,7 +1381,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:219](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L219)
+[vec2.ts:219](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L219)
 
 ___
 
@@ -1381,7 +1402,7 @@ ___
 
 #### Defined in
 
-[render2.ts:3](https://github.com/eransed/mathil/blob/c60aaf8/src/render2.ts#L3)
+[render2.ts:3](https://github.com/eransed/mathil/blob/0629cd8/src/render2.ts#L3)
 
 ___
 
@@ -1405,7 +1426,7 @@ ___
 
 #### Defined in
 
-[number.ts:33](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L33)
+[number.ts:33](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L33)
 
 ___
 
@@ -1435,7 +1456,7 @@ Translated v in range v_min to v_max to target range t_min to t_max
 
 #### Defined in
 
-[number.ts:48](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L48)
+[number.ts:48](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L48)
 
 ___
 
@@ -1455,7 +1476,7 @@ ___
 
 #### Defined in
 
-[log.ts:130](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L130)
+[log.ts:130](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L130)
 
 ___
 
@@ -1475,7 +1496,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:179](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L179)
+[vec2.ts:179](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L179)
 
 ___
 
@@ -1495,7 +1516,35 @@ ___
 
 #### Defined in
 
-[vec2.ts:175](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L175)
+[vec2.ts:175](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L175)
+
+___
+
+### makePingData
+
+▸ **makePingData**(): [`PingData`](interfaces/PingData.md)
+
+#### Returns
+
+[`PingData`](interfaces/PingData.md)
+
+#### Defined in
+
+ping.ts:41
+
+___
+
+### makePingId
+
+▸ **makePingId**(): `string`
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+ping.ts:35
 
 ___
 
@@ -1516,7 +1565,7 @@ ___
 
 #### Defined in
 
-[matrix.ts:44](https://github.com/eransed/mathil/blob/c60aaf8/src/matrix.ts#L44)
+[matrix.ts:44](https://github.com/eransed/mathil/blob/0629cd8/src/matrix.ts#L44)
 
 ___
 
@@ -1537,7 +1586,7 @@ ___
 
 #### Defined in
 
-[matrix.ts:35](https://github.com/eransed/mathil/blob/c60aaf8/src/matrix.ts#L35)
+[matrix.ts:35](https://github.com/eransed/mathil/blob/0629cd8/src/matrix.ts#L35)
 
 ___
 
@@ -1557,7 +1606,7 @@ ___
 
 #### Defined in
 
-[matrix.ts:93](https://github.com/eransed/mathil/blob/c60aaf8/src/matrix.ts#L93)
+[matrix.ts:93](https://github.com/eransed/mathil/blob/0629cd8/src/matrix.ts#L93)
 
 ___
 
@@ -1577,7 +1626,7 @@ ___
 
 #### Defined in
 
-[matrix.ts:81](https://github.com/eransed/mathil/blob/c60aaf8/src/matrix.ts#L81)
+[matrix.ts:81](https://github.com/eransed/mathil/blob/0629cd8/src/matrix.ts#L81)
 
 ___
 
@@ -1597,7 +1646,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:105](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L105)
+[vec2.ts:105](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L105)
 
 ___
 
@@ -1617,7 +1666,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:109](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L109)
+[vec2.ts:109](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L109)
 
 ___
 
@@ -1638,7 +1687,7 @@ ___
 
 #### Defined in
 
-[render2.ts:7](https://github.com/eransed/mathil/blob/c60aaf8/src/render2.ts#L7)
+[render2.ts:7](https://github.com/eransed/mathil/blob/0629cd8/src/render2.ts#L7)
 
 ___
 
@@ -1659,7 +1708,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:131](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L131)
+[vec2.ts:131](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L131)
 
 ___
 
@@ -1680,7 +1729,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:99](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L99)
+[vec3.ts:99](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L99)
 
 ___
 
@@ -1701,7 +1750,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:234](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L234)
+[vec3.ts:234](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L234)
 
 ___
 
@@ -1715,7 +1764,7 @@ ___
 
 #### Defined in
 
-[stats.ts:31](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L31)
+[stats.ts:31](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L31)
 
 ___
 
@@ -1735,7 +1784,7 @@ ___
 
 #### Defined in
 
-[stats.ts:173](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L173)
+[stats.ts:173](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L173)
 
 ___
 
@@ -1757,7 +1806,7 @@ ___
 
 #### Defined in
 
-[matrix.ts:5](https://github.com/eransed/mathil/blob/c60aaf8/src/matrix.ts#L5)
+[matrix.ts:5](https://github.com/eransed/mathil/blob/0629cd8/src/matrix.ts#L5)
 
 ___
 
@@ -1782,7 +1831,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:20](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L20)
+[vec3.ts:20](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L20)
 
 ___
 
@@ -1803,7 +1852,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:31](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L31)
+[vec3.ts:31](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L31)
 
 ___
 
@@ -1824,7 +1873,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:14](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L14)
+[vec2.ts:14](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L14)
 
 ___
 
@@ -1846,7 +1895,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:42](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L42)
+[vec3.ts:42](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L42)
 
 ___
 
@@ -1866,7 +1915,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:183](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L183)
+[vec2.ts:183](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L183)
 
 ___
 
@@ -1886,7 +1935,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:127](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L127)
+[vec3.ts:127](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L127)
 
 ___
 
@@ -1908,7 +1957,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:265](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L265)
+[vec2.ts:265](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L265)
 
 ___
 
@@ -1929,7 +1978,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:63](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L63)
+[vec2.ts:63](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L63)
 
 ___
 
@@ -1950,7 +1999,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:281](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L281)
+[vec3.ts:281](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L281)
 
 ___
 
@@ -1970,7 +2019,7 @@ ___
 
 #### Defined in
 
-[number.ts:29](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L29)
+[number.ts:29](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L29)
 
 ___
 
@@ -1990,7 +2039,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:273](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L273)
+[vec3.ts:273](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L273)
 
 ___
 
@@ -2012,7 +2061,7 @@ ___
 
 #### Defined in
 
-[stats.ts:278](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L278)
+[stats.ts:278](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L278)
 
 ___
 
@@ -2046,7 +2095,42 @@ Draw a vector from origin to v
 
 #### Defined in
 
-[render2.ts:18](https://github.com/eransed/mathil/blob/c60aaf8/src/render2.ts#L18)
+[render2.ts:18](https://github.com/eransed/mathil/blob/0629cd8/src/render2.ts#L18)
+
+___
+
+### rndStr
+
+▸ **rndStr**(`count`, `randomFunc?`): `string`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `count` | `number` | `undefined` |
+| `randomFunc` | () => `number` | `cryptoRandom` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+ping.ts:21
+
+___
+
+### rndStr\_
+
+▸ **rndStr_**(): `string`
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+ping.ts:31
 
 ___
 
@@ -2067,7 +2151,7 @@ ___
 
 #### Defined in
 
-[number.ts:2](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L2)
+[number.ts:2](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L2)
 
 ___
 
@@ -2088,7 +2172,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:215](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L215)
+[vec2.ts:215](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L215)
 
 ___
 
@@ -2109,7 +2193,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:119](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L119)
+[vec3.ts:119](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L119)
 
 ___
 
@@ -2130,7 +2214,7 @@ ___
 
 #### Defined in
 
-[number.ts:6](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L6)
+[number.ts:6](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L6)
 
 ___
 
@@ -2150,7 +2234,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:207](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L207)
+[vec3.ts:207](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L207)
 
 ___
 
@@ -2170,7 +2254,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:216](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L216)
+[vec3.ts:216](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L216)
 
 ___
 
@@ -2190,7 +2274,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:225](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L225)
+[vec3.ts:225](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L225)
 
 ___
 
@@ -2215,7 +2299,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:263](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L263)
+[vec3.ts:263](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L263)
 
 ___
 
@@ -2236,7 +2320,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:164](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L164)
+[vec2.ts:164](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L164)
 
 ___
 
@@ -2257,7 +2341,7 @@ ___
 
 #### Defined in
 
-[number.ts:16](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L16)
+[number.ts:16](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L16)
 
 ___
 
@@ -2278,7 +2362,7 @@ ___
 
 #### Defined in
 
-[number.ts:21](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L21)
+[number.ts:21](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L21)
 
 ___
 
@@ -2299,7 +2383,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:46](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L46)
+[vec3.ts:46](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L46)
 
 ___
 
@@ -2320,7 +2404,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:139](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L139)
+[vec2.ts:139](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L139)
 
 ___
 
@@ -2341,7 +2425,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:245](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L245)
+[vec3.ts:245](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L245)
 
 ___
 
@@ -2362,7 +2446,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:153](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L153)
+[vec2.ts:153](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L153)
 
 ___
 
@@ -2383,7 +2467,7 @@ ___
 
 #### Defined in
 
-[canvas.ts:13](https://github.com/eransed/mathil/blob/c60aaf8/src/canvas.ts#L13)
+[canvas.ts:13](https://github.com/eransed/mathil/blob/0629cd8/src/canvas.ts#L13)
 
 ___
 
@@ -2405,7 +2489,7 @@ ___
 
 #### Defined in
 
-[stats.ts:270](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L270)
+[stats.ts:270](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L270)
 
 ___
 
@@ -2427,7 +2511,7 @@ ___
 
 #### Defined in
 
-[number.ts:74](https://github.com/eransed/mathil/blob/c60aaf8/src/number.ts#L74)
+[number.ts:74](https://github.com/eransed/mathil/blob/0629cd8/src/number.ts#L74)
 
 ___
 
@@ -2448,7 +2532,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:146](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L146)
+[vec2.ts:146](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L146)
 
 ___
 
@@ -2469,7 +2553,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:111](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L111)
+[vec3.ts:111](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L111)
 
 ___
 
@@ -2490,7 +2574,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:124](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L124)
+[vec2.ts:124](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L124)
 
 ___
 
@@ -2511,7 +2595,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:83](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L83)
+[vec3.ts:83](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L83)
 
 ___
 
@@ -2531,7 +2615,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:61](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L61)
+[vec3.ts:61](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L61)
 
 ___
 
@@ -2551,7 +2635,7 @@ ___
 
 #### Defined in
 
-[tester.ts:53](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L53)
+[tester.ts:54](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L54)
 
 ___
 
@@ -2572,7 +2656,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:10](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L10)
+[vec2.ts:10](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L10)
 
 ___
 
@@ -2593,7 +2677,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:78](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L78)
+[vec3.ts:78](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L78)
 
 ___
 
@@ -2614,7 +2698,7 @@ ___
 
 #### Defined in
 
-[render2.ts:11](https://github.com/eransed/mathil/blob/c60aaf8/src/render2.ts#L11)
+[render2.ts:11](https://github.com/eransed/mathil/blob/0629cd8/src/render2.ts#L11)
 
 ___
 
@@ -2634,7 +2718,7 @@ ___
 
 #### Defined in
 
-[stats.ts:58](https://github.com/eransed/mathil/blob/c60aaf8/src/stats.ts#L58)
+[stats.ts:58](https://github.com/eransed/mathil/blob/0629cd8/src/stats.ts#L58)
 
 ___
 
@@ -2648,7 +2732,7 @@ ___
 
 #### Defined in
 
-[log.ts:72](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L72)
+[log.ts:72](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L72)
 
 ___
 
@@ -2670,7 +2754,7 @@ ___
 
 #### Defined in
 
-[log.ts:91](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L91)
+[log.ts:91](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L91)
 
 ___
 
@@ -2692,7 +2776,7 @@ ___
 
 #### Defined in
 
-[log.ts:115](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L115)
+[log.ts:115](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L115)
 
 ___
 
@@ -2715,7 +2799,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:18](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L18)
+[vec2.ts:18](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L18)
 
 ___
 
@@ -2735,7 +2819,7 @@ ___
 
 #### Defined in
 
-[matrix.ts:74](https://github.com/eransed/mathil/blob/c60aaf8/src/matrix.ts#L74)
+[matrix.ts:74](https://github.com/eransed/mathil/blob/0629cd8/src/matrix.ts#L74)
 
 ___
 
@@ -2755,7 +2839,7 @@ ___
 
 #### Defined in
 
-[matrix.ts:66](https://github.com/eransed/mathil/blob/c60aaf8/src/matrix.ts#L66)
+[matrix.ts:66](https://github.com/eransed/mathil/blob/0629cd8/src/matrix.ts#L66)
 
 ___
 
@@ -2775,7 +2859,7 @@ ___
 
 #### Defined in
 
-[log.ts:140](https://github.com/eransed/mathil/blob/c60aaf8/src/log.ts#L140)
+[log.ts:140](https://github.com/eransed/mathil/blob/0629cd8/src/log.ts#L140)
 
 ___
 
@@ -2797,7 +2881,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:257](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L257)
+[vec2.ts:257](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L257)
 
 ___
 
@@ -2818,7 +2902,7 @@ ___
 
 #### Defined in
 
-[vec2.ts:223](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L223)
+[vec2.ts:223](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L223)
 
 ___
 
@@ -2841,4 +2925,4 @@ ___
 
 #### Defined in
 
-[vec2.ts:273](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L273)
+[vec2.ts:273](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L273)

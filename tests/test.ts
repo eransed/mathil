@@ -1,4 +1,5 @@
 import { info, dateTimeStamp, usNow, usPretty } from "../src/log";
+import { Pinger } from "../src/ping"
 import { runColorTests } from "./test_color";
 import { run_log_tests } from "./test_log";
 import { basic_matrixMul, basic_newMat } from "./test_matrix";
@@ -20,6 +21,9 @@ basic_newMat()
 basic_matrixMul()
 run_geo_tests()
 runDist3Tests()
+
+const p = new Pinger()
+p.test()
 
 process.on('exit', (code) => {
   info('\nBuild info:')

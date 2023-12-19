@@ -1,9 +1,9 @@
 {
   "name": "mathil",
-  "version": "0.12.1",
+  "version": "0.13.0",
   "author": "eransed",
   "homepage": "https://github.com/eransed/mathil",
-  "description": "Toy math library",
+  "description": "Toy math and util library",
   "keywords": [
     "math",
     "vector",
@@ -12,7 +12,8 @@
     "2D",
     "3D",
     "canvas",
-    "utils"
+    "utils",
+    "net"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,8 +31,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.9.0",
+    "@types/ws": "^8.5.10",
     "typedoc": "^0.25.3",
     "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "ws": "^8.15.1"
   }
 }

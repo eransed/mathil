@@ -1,6 +1,6 @@
 # mathil
 
-Toy math library
+Toy math and util library
 
 Install
 

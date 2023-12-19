@@ -1,4 +1,4 @@
-[mathil - v0.12.1](../README.md) / [Exports](../modules.md) / Tester
+[mathil - v0.13.0](../README.md) / [Exports](../modules.md) / Tester
 
 # Class: Tester\<T, U\>
 
@@ -55,7 +55,7 @@
 
 #### Defined in
 
-[tester.ts:11](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L11)
+[tester.ts:11](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L11)
 
 ## Properties
 
@@ -80,7 +80,7 @@
 
 #### Defined in
 
-[tester.ts:5](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L5)
+[tester.ts:5](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L5)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[tester.ts:8](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L8)
+[tester.ts:8](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L8)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[tester.ts:7](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L7)
+[tester.ts:7](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L7)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[tester.ts:9](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L9)
+[tester.ts:9](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L9)
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[tester.ts:6](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L6)
+[tester.ts:6](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L6)
 
 ## Methods
 
@@ -148,7 +148,7 @@ ___
 
 #### Defined in
 
-[tester.ts:40](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L40)
+[tester.ts:41](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L41)
 
 ___
 
@@ -170,4 +170,4 @@ ___
 
 #### Defined in
 
-[tester.ts:19](https://github.com/eransed/mathil/blob/c60aaf8/src/tester.ts#L19)
+[tester.ts:20](https://github.com/eransed/mathil/blob/0629cd8/src/tester.ts#L20)

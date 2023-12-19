@@ -2,7 +2,13 @@ mathil / [Exports](modules.md)
 
 # mathil
 
-Toy math library
+Toy math and util library
+
+Install
+
+```
+npm i mathil
+```
 
 Build
 

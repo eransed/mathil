@@ -1,4 +1,4 @@
-[mathil - v0.12.1](../README.md) / [Exports](../modules.md) / Line
+[mathil - v0.13.0](../README.md) / [Exports](../modules.md) / Line
 
 # Interface: Line
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[line.ts:4](https://github.com/eransed/mathil/blob/c60aaf8/src/line.ts#L4)
+[line.ts:4](https://github.com/eransed/mathil/blob/0629cd8/src/line.ts#L4)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[line.ts:5](https://github.com/eransed/mathil/blob/c60aaf8/src/line.ts#L5)
+[line.ts:5](https://github.com/eransed/mathil/blob/0629cd8/src/line.ts#L5)

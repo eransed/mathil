@@ -1,4 +1,4 @@
-[mathil - v0.12.1](../README.md) / [Exports](../modules.md) / Vec3
+[mathil - v0.13.0](../README.md) / [Exports](../modules.md) / Vec3
 
 # Interface: Vec3
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[vec3.ts:6](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L6)
+[vec3.ts:6](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L6)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[vec3.ts:7](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L7)
+[vec3.ts:7](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L7)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[vec3.ts:8](https://github.com/eransed/mathil/blob/c60aaf8/src/vec3.ts#L8)
+[vec3.ts:8](https://github.com/eransed/mathil/blob/0629cd8/src/vec3.ts#L8)

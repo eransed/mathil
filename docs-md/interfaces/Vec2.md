@@ -1,4 +1,4 @@
-[mathil - v0.12.1](../README.md) / [Exports](../modules.md) / Vec2
+[mathil - v0.13.0](../README.md) / [Exports](../modules.md) / Vec2
 
 # Interface: Vec2
 
@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[vec2.ts:6](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L6)
+[vec2.ts:6](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L6)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[vec2.ts:7](https://github.com/eransed/mathil/blob/c60aaf8/src/vec2.ts#L7)
+[vec2.ts:7](https://github.com/eransed/mathil/blob/0629cd8/src/vec2.ts#L7)
