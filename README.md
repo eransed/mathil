@@ -1,5 +1,7 @@
 # mathil
 
+![build](https://github.com/eransed/mathil/actions/workflows/node.js.yml/badge.svg)
+
 Toy math and util library
 
 Install
