@@ -9,8 +9,12 @@ export function rndi(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+// export function limit(n: number, max: number): number {
+//   return n >= Math.abs(max) ? max : n
+// }
+
 export function limit(n: number, max: number): number {
-  return n >= Math.abs(max) ? max : n
+  return Math.abs(n) >= Math.abs(max) ? (n < 0 ? -max : max) : n
 }
 
 export function round2dec(num: number, dec = 2): number {
